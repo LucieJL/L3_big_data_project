@@ -12,7 +12,11 @@ testIndexes = pd.read_csv('exemple.txt', sep='\t', header=None)
 
 # Age : Division des classes d'âges existantes en fonction de leur médiane
 # Education : Numérisation/Ordonnement
+df['cps19_education']= df['cps19_education'].replace({'No schooling':0, 'Some elementary school':1, 'Completed elementary school':2,'Some secondary/ high school': 3, 'Completed secondary/ high school': 4, 'Some technical, community college, CEGEP, College Classique': 5, 'Completed technical, community college, CEGEP, College Classique': 6, 'Some university': 7, "Bachelor's degree": 8, "Master's degree":9, 'Professional degree or doctorate': 10, "Don't know/ Prefer not to answer": -1})
+print(df['cps19_education'])
 # Emploi : Remplacement de "je ne sais pas" par "autre"
+df['cps19_employment']= df['cps19_employment'].replace({"Don't know/ Prefer not to answer": 'Other'})
+print(df['cps19_employment'])
 # Religion : Groupement par "grand courant regligieux"
 
 ''' Séparation du dataset de test '''
