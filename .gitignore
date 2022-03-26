@@ -1,0 +1,10 @@
+# IDE
+/.idea
+/.vscode
+
+# Other
+/venv
+
+# Datasets
+CES19.csv
+exemple.txt
