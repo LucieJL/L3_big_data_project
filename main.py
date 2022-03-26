@@ -11,6 +11,17 @@ testIndexes = pd.read_csv('exemple.txt', sep='\t', header=None)
 ''' Pipeline de prétraitrement '''
 
 # Age : Division des classes d'âges existantes en fonction de leur médiane
+col = "cps19_age"
+choices = [1,2,3,4,5,6]
+conditions = [(df[col]>=18) & (df[col]<29),
+            (df[col]>=29) & (df[col]<35),
+            (df[col]>=35) & (df[col]<45),
+            (df[col]>=45) & (df[col]<55),
+            (df[col]>=55) & (df[col]<66),
+            (df[col]>=66)]
+df["classeAge"] = np.select(conditions, choices, default=0)
+
+
 # Education : Numérisation/Ordonnement
 df['cps19_education']= df['cps19_education'].replace({'No schooling':0, 'Some elementary school':1, 'Completed elementary school':2,'Some secondary/ high school': 3, 'Completed secondary/ high school': 4, 'Some technical, community college, CEGEP, College Classique': 5, 'Completed technical, community college, CEGEP, College Classique': 6, 'Some university': 7, "Bachelor's degree": 8, "Master's degree":9, 'Professional degree or doctorate': 10, "Don't know/ Prefer not to answer": -1})
 print(df['cps19_education'])
