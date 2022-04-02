@@ -39,11 +39,15 @@ df['cps19_religion']=df['cps19_religion'].replace({"None/ Don't have one/ Atheis
 dfTest = df[df.index.isin(testIndexes[0])]
 df = df[~df.index.isin(testIndexes[0])]
 
-''' Fusionner les étiquettes pour avoir une seule colonne label'''
+''' Fusionner les étiquettes pour avoir une seule colonne label df['label']'''
 data_label= df.iloc[:,22:31]
 data_label = data_label.fillna('')
-data_label['label'] = data_label['cps19_votechoice'] + data_label['cps19_votechoice_pr'] + data_label['cps19_vote_unlikely']+ data_label['cps19_vote_unlike_pr'] + data_label['cps19_v_advance']
-print(data_label['label'])
+df['label'] = data_label['cps19_votechoice'] + data_label['cps19_votechoice_pr'] + data_label['cps19_vote_unlikely']+ data_label['cps19_vote_unlike_pr'] + data_label['cps19_v_advance']
+#print(df['label']) #Length: 34163
+df= df.loc[df['label'] != ''] # retirer les 1O00 individus sans reponses
+#print(df['label']) #Length: 32937
+
+
 ''' Sélection des attributs '''
 
 attributes = [
