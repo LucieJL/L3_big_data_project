@@ -34,6 +34,28 @@ df['cps19_religion']=df['cps19_religion'].replace({"None/ Don't have one/ Atheis
 
 #Genre rien à faire 
 
+# OHE sur employment + relig + genre
+emp = df[['cps19_employment']]
+relig = df[['cps19_religion']]
+genre = df[['cps19_gender']]
+
+le = preprocessing.LabelEncoder()
+
+emp_2 = emp.apply(le.fit_transform)
+relig_2 = relig.apply(le.fit_transform)
+genre_2 = genre.apply(le.fit_transform)
+
+enc = preprocessing.OneHotEncoder()
+
+enc.fit(emp_2)
+onehotlabelsEmp = enc.transform(emp_2).toarray()
+
+enc.fit(relig_2)
+onehotlabelsRelig = enc.transform(relig_2).toarray()
+
+enc.fit(genre_2)
+onehotlabelsGenre = enc.transform(genre_2).toarray()
+
 ''' Séparation du dataset de test '''
 
 dfTest = df[df.index.isin(testIndexes[0])]
