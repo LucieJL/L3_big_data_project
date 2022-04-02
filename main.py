@@ -44,6 +44,18 @@ data_label= df.iloc[:,22:31]
 data_label = data_label.fillna('')
 data_label['label'] = data_label['cps19_votechoice'] + data_label['cps19_votechoice_pr'] + data_label['cps19_vote_unlikely']+ data_label['cps19_vote_unlike_pr'] + data_label['cps19_v_advance']
 print(data_label['label'])
+''' Sélection des attributs '''
+
+attributes = [
+    'classeAge',
+    'cps19_gender',
+    'cps19_education',
+    'cps19_employment',
+    'cps19_religion',
+]
+
+df = df[attributes]
+dfTest = dfTest[attributes]
 
 ''' Entrainement '''
 
