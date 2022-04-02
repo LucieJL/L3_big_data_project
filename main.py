@@ -36,17 +36,26 @@ df['cps19_religion']=df['cps19_religion'].replace({"None/ Don't have one/ Atheis
 
 ''' Séparation du dataset de test '''
 
-dfTest = df[df.index.isin(testIndexes[0])]
-df = df[~df.index.isin(testIndexes[0])]
+dfTest = df[df.index.isin(testIndexes[0])].copy(deep=False)
+df = df[~df.index.isin(testIndexes[0])].copy(deep=False)
 
 ''' Fusionner les étiquettes pour avoir une seule colonne label df['label']'''
-data_label= df.iloc[:,22:31]
-data_label = data_label.fillna('')
-df['label'] = data_label['cps19_votechoice'] + data_label['cps19_votechoice_pr'] + data_label['cps19_vote_unlikely']+ data_label['cps19_vote_unlike_pr'] + data_label['cps19_v_advance']
+#df.fillna({'cps19_votechoice': '', 'cps19_votechoice_pr': '', 'cps19_vote_unlikely': '', 'cps19_vote_unlike_pr': '', 'cps19_v_advance': ''}, inplace=True)
+label_cols = [
+    'cps19_votechoice',
+    'cps19_votechoice_pr',
+    'cps19_vote_unlikely',
+    'cps19_vote_unlike_pr',
+    'cps19_v_advance',
+]
+df[label_cols] = df[label_cols].fillna('')
+#data_label= df.iloc[:,22:31]
+#data_label = data_label.fillna('')
+df['label'] = df['cps19_votechoice'] + df['cps19_votechoice_pr'] + df['cps19_vote_unlikely'] + df['cps19_vote_unlike_pr'] + df['cps19_v_advance']
 #print(df['label']) #Length: 34163
-df= df.loc[df['label'] != ''] # retirer les 1O00 individus sans reponses
+df = df[df['label'] != ''] # retirer les 1O00 individus sans reponses
 #print(df['label']) #Length: 32937
-
+print(df['label'].unique())
 
 ''' Sélection des attributs '''
 
