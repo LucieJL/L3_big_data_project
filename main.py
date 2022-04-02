@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn import preprocessing
 from sklearn.model_selection import KFold
 
 ''' Paramétrage '''
@@ -56,13 +57,8 @@ onehotlabelsRelig = enc.transform(relig_2).toarray()
 enc.fit(genre_2)
 onehotlabelsGenre = enc.transform(genre_2).toarray()
 
-''' Séparation du dataset de test '''
-
-dfTest = df[df.index.isin(testIndexes[0])].copy(deep=False)
-df = df[~df.index.isin(testIndexes[0])].copy(deep=False)
-
 ''' Fusionner les étiquettes pour avoir une seule colonne label df['label']'''
-#df.fillna({'cps19_votechoice': '', 'cps19_votechoice_pr': '', 'cps19_vote_unlikely': '', 'cps19_vote_unlike_pr': '', 'cps19_v_advance': ''}, inplace=True)
+
 label_cols = [
     'cps19_votechoice',
     'cps19_votechoice_pr',
@@ -71,32 +67,35 @@ label_cols = [
     'cps19_v_advance',
 ]
 df[label_cols] = df[label_cols].fillna('')
-#data_label= df.iloc[:,22:31]
-#data_label = data_label.fillna('')
 df['label'] = df['cps19_votechoice'] + df['cps19_votechoice_pr'] + df['cps19_vote_unlikely'] + df['cps19_vote_unlike_pr'] + df['cps19_v_advance']
-#print(df['label']) #Length: 34163
-df = df[df['label'] != ''] # retirer les 1O00 individus sans reponses
-#print(df['label']) #Length: 32937
-print(df['label'].unique())
 
 ''' Sélection des attributs '''
 
 attributes = [
     'classeAge',
-    'cps19_gender',
+#    'cps19_gender',
     'cps19_education',
-    'cps19_employment',
-    'cps19_religion',
+#    'cps19_employment',
+#    'cps19_religion',
+    'label'
 ]
 
 df = df[attributes]
-dfTest = dfTest[attributes]
+df = df.join(pd.DataFrame(np.concatenate((onehotlabelsGenre, onehotlabelsRelig, onehotlabelsEmp), axis=1)))
+
+''' Séparation du dataset de test '''
+
+dfTest = df[df.index.isin(testIndexes[0])]
+dfTrain = df[~df.index.isin(testIndexes[0])]
+
+# Retirer les ~1000 individus sans reponses (1226)
+dfTrain = dfTrain[dfTrain['label'] != '']
 
 ''' Entrainement '''
 
 # Utilisation de "k-fold cross validation"
 kf = KFold(n_splits=10)
-for train_index, test_index in kf.split(df):
+for train_index, test_index in kf.split(dfTrain):
     print("TRAIN:", train_index, "TEST:", test_index)
 
     # Classificateur naïf de bayes
