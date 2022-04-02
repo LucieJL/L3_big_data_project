@@ -5,7 +5,7 @@ from sklearn.model_selection import KFold
 
 ''' Paramétrage '''
 
-df = pd.read_csv('CES19.csv', dtype=str)
+df = pd.read_csv('CES19.csv')
 testIndexes = pd.read_csv('exemple.txt', sep='\t', header=None)
 
 ''' Pipeline de prétraitrement '''
