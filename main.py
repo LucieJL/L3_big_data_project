@@ -32,12 +32,18 @@ df['cps19_employment']= df['cps19_employment'].replace({"Don't know/ Prefer not 
 df['cps19_religion']=df['cps19_religion'].replace({"None/ Don't have one/ Atheist":'Non religieux', 'Agnostic':'Non religieux', 'Buddhist/ Buddhism':'oriental', 'Hindu':'oriental', 'Jewish/ Judaism/ Jewish Orthodox':'juif', 'Muslim/ Islam': 'musulman', 'Sikh/ Sikhism':'oriental', "Anglican/ Church of England":'chretiens', 'Baptist':'chretiens', 'Catholic/ Roman Catholic/ RC':'chretiens', "Greek Orthodox/ Ukrainian Orthodox/ Russian Orthodox/ Eastern Orthodox": 'chretiens', "Jehovah's Witness":'chretiens', 'Lutheran':'chretiens', "Mormon/ Church of Jesus Christ of the Latter Day Saints":'chretiens déviré', 'Pentecostal/ Fundamentalist/ Born Again/ Evangelical':'chretiens déviré','Presbyterian':'chretiens','Protestant':'chretiens', 'United Church of Canada':'chretiens', 'Christian Reformed':'chretiens', 'Salvation Army':'chretiens', 'Mennonite':'chretiens déviré', 'Other (please specify)':'other',"Don't know/ Prefer not to answer":'other'})
 #print(df['cps19_religion'])
 
-#genre rien à faire 
+#Genre rien à faire 
 
 ''' Séparation du dataset de test '''
 
 dfTest = df[df.index.isin(testIndexes[0])]
 df = df[~df.index.isin(testIndexes[0])]
+
+''' Fusionner les étiquettes pour avoir une seule colonne label'''
+data_label= df.iloc[:,22:31]
+data_label = data_label.fillna('')
+data_label['label'] = data_label['cps19_votechoice'] + data_label['cps19_votechoice_pr'] + data_label['cps19_vote_unlikely']+ data_label['cps19_vote_unlike_pr'] + data_label['cps19_v_advance']
+print(data_label['label'])
 
 ''' Entrainement '''
 
