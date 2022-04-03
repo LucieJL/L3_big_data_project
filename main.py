@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn import preprocessing
 from sklearn.model_selection import KFold
-from sklearn.naive_bayes import CategoricalNB
+from sklearn.naive_bayes import CategoricalNB, MultinomialNB
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
 from scipy import stats
@@ -12,7 +12,7 @@ from scipy import stats
 
 # 0 => Catégorie non ordonnées
 # 1 => Numérique ordonné
-MODE = 0
+MODE = 1
 
 df = pd.read_csv('CES19.csv')
 testIndexes = pd.read_csv('exemple.txt', sep='\t', header=None)
@@ -153,8 +153,23 @@ exit(0)'''
 
 ''' Entrainement '''
 
+def detailPrint(y_test,y_test_pred):
+    print("Matrice de confusion :\n", confusion_matrix(y_test, y_test_pred))
+    print("Exactitude :", accuracy_score(y_test, y_test_pred))
+    print("Précision :", precision_score(y_test, y_test_pred, average='macro'))
+    print("Rappel :", recall_score(y_test, y_test_pred, average='macro'))
+    print("F1-score :", f1_score(y_test, y_test_pred, average='macro'))
+    
+
 catNB = CategoricalNB()
+multNB = MultinomialNB()
 rf = RandomForestClassifier()
+
+lst_catNB_accuracy=[]
+lst_multNB_accuracy=[]
+lst_rf_accurancy=[]
+
+index_partition=0
 
 # Utilisation de "k-fold cross validation"
 kf = KFold(n_splits=10)
@@ -166,20 +181,27 @@ for train_index, test_index in kf.split(dfTrain):
     X_test = dfTrain.iloc[test_index].loc[:, dfTrain.columns != 'label']
     y_test = dfTrain.iloc[test_index]['label']
 
-    # CategoricalNB
+    #CategoricalNB
+    print('CategorialNB')
     catNB.fit(X_train, y_train)
     y_test_pred = catNB.predict(X_test)
-
-    print("Matrice de confusion :\n", confusion_matrix(y_test, y_test_pred))
-    print("Exactitude :", accuracy_score(y_test, y_test_pred))
-    print("Précision :", precision_score(y_test, y_test_pred, average='macro'))
-    print("Rappel :", recall_score(y_test, y_test_pred, average='macro'))
-    print("F1-score :", f1_score(y_test, y_test_pred, average='macro'))
-
+    lst_catNB_accuracy.append(accuracy_score(y_test, y_test_pred))
+    detailPrint(y_test,y_test_pred)
+    
+    #MultinomialNB
+    print('MultinomialNB')
+    multNB.fit(X_train, y_train)
+    y_test_pred = multNB.predict(X_test)
+    lst_multNB_accuracy.append(accuracy_score(y_test, y_test_pred))
+    detailPrint(y_test,y_test_pred)
+   
     # RandomForestClassifier
-    # rf.fit(X_train, y_train)
-    # y_test_pred = rf.predict(X_test)
-
+    print("RandomForestClassifier")
+    rf.fit(X_train, y_train)
+    y_test_pred = rf.predict(X_test)
+    lst_rf_accurancy.append(accuracy_score(y_test, y_test_pred))
+    detailPrint(y_test,y_test_pred)
+    
     # Classificateur naïf de bayes
     # https://www.stat4decision.com/fr/foret-aleatoire-avec-python/
 
@@ -188,6 +210,17 @@ for train_index, test_index in kf.split(dfTrain):
 
     # K plus proches voisins
     # https://medium.com/@kenzaharifi/bien-comprendre-lalgorithme-des-k-plus-proches-voisins-fonctionnement-et-impl%C3%A9mentation-sur-r-et-a66d2d372679
+    index_partition=index_partition+1
+
+print('--CategorialNB-- ')
+print('max exactitude : ' + str(max(lst_catNB_accuracy)))
+print('mean exactitude : ' + str(sum(lst_catNB_accuracy) / len(lst_catNB_accuracy)))
+print('--MultinomialNB-- ')
+print('max exactitude : ' + str(max(lst_multNB_accuracy)))
+print('mean exactitude : ' + str(sum(lst_multNB_accuracy) / len(lst_multNB_accuracy)))
+print("--RandomForestClassifier--")
+print('max exactitude : ' + str(max(lst_rf_accurancy)))
+print('mean exactitude : ' + str(sum(lst_rf_accurancy) / len(lst_rf_accurancy)))
 
 ''' Test de l'algorithme '''
 
