@@ -11,7 +11,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, r
 
 # 0 => Catégorie non ordonnées
 # 1 => Numérique ordonné
-MODE = 1
+MODE = 0
 
 df = pd.read_csv('CES19.csv')
 testIndexes = pd.read_csv('exemple.txt', sep='\t', header=None)
@@ -49,6 +49,8 @@ df['cps19_employment']= df['cps19_employment'].replace({"Don't know/ Prefer not 
 #Non religieux/oriental/juif/musulman/chretiens/chretiens déviré/other
 df['cps19_religion']=df['cps19_religion'].replace({"None/ Don't have one/ Atheist":'Non religieux', 'Agnostic':'Non religieux', 'Buddhist/ Buddhism':'oriental', 'Hindu':'oriental', 'Jewish/ Judaism/ Jewish Orthodox':'juif', 'Muslim/ Islam': 'musulman', 'Sikh/ Sikhism':'oriental', "Anglican/ Church of England":'chretiens', 'Baptist':'chretiens', 'Catholic/ Roman Catholic/ RC':'chretiens', "Greek Orthodox/ Ukrainian Orthodox/ Russian Orthodox/ Eastern Orthodox": 'chretiens', "Jehovah's Witness":'chretiens', 'Lutheran':'chretiens', "Mormon/ Church of Jesus Christ of the Latter Day Saints":'chretiens déviré', 'Pentecostal/ Fundamentalist/ Born Again/ Evangelical':'chretiens déviré','Presbyterian':'chretiens','Protestant':'chretiens', 'United Church of Canada':'chretiens', 'Christian Reformed':'chretiens', 'Salvation Army':'chretiens', 'Mennonite':'chretiens déviré', 'Other (please specify)':'other',"Don't know/ Prefer not to answer":'other'})
 #print(df['cps19_religion'])
+df['row_num'] = df.reset_index().index
+
 
 #Genre rien à faire 
 
@@ -92,6 +94,7 @@ attributes = []
 
 if MODE == 0:
     attributes = [
+        'row_num',
         'classeAge',
         'cps19_gender',
         'cps19_education',
@@ -101,6 +104,7 @@ if MODE == 0:
     ]
 elif MODE == 1:
     attributes = [
+        'row_num'
         'classeAge',
         'cps19_education',
         'label'
@@ -155,9 +159,11 @@ kf = KFold(n_splits=10)
 for train_index, test_index in kf.split(dfTrain):
     print("TRAIN:", train_index, "TEST:", test_index)
 
-    X_train = dfTrain.iloc[train_index].loc[:, dfTrain.columns != 'label']
+    #X_train = dfTrain.iloc[train_index].loc[:, dfTrain.columns != 'label']
+    X_train = dfTrain.drop(columns=['label','row_num' ]).iloc[train_index, :]
     y_train = dfTrain.iloc[train_index]['label']
-    X_test = dfTrain.iloc[test_index].loc[:, dfTrain.columns != 'label']
+    #X_test = dfTrain.iloc[test_index].loc[:, dfTrain.columns != 'label']
+    X_test = dfTrain.drop(columns=['label','row_num' ]).iloc[test_index, :]
     y_test = dfTrain.iloc[test_index]['label']
 
     #CategoricalNB
@@ -166,6 +172,7 @@ for train_index, test_index in kf.split(dfTrain):
     y_test_pred = catNB.predict(X_test)
     lst_catNB_accuracy.append(accuracy_score(y_test, y_test_pred))
     detailPrint(y_test,y_test_pred)
+    
     
     #MultinomialNB
     print('MultinomialNB')
@@ -194,6 +201,7 @@ for train_index, test_index in kf.split(dfTrain):
 print('--CategorialNB-- ')
 print('max exactitude : ' + str(max(lst_catNB_accuracy)))
 print('mean exactitude : ' + str(sum(lst_catNB_accuracy) / len(lst_catNB_accuracy)))
+
 print('--MultinomialNB-- ')
 print('max exactitude : ' + str(max(lst_multNB_accuracy)))
 print('mean exactitude : ' + str(sum(lst_multNB_accuracy) / len(lst_multNB_accuracy)))
@@ -204,5 +212,28 @@ print('mean exactitude : ' + str(sum(lst_rf_accurancy) / len(lst_rf_accurancy)))
 ''' Test de l'algorithme '''
 
 # Classificateur naïf de bayes
+
+#lst=catNB.predict(dfTest.drop(columns=['label','row_num' ]))
+#print(lst)
+
+df_sortie=pd.DataFrame(catNB.predict(dfTest.drop(columns=['label','row_num' ])))
+df_sortie["row_num"] = dfTest['row_num'] 
+#%%
+print(df_sortie)
+print(dfTest['row_num'] )
+#%%
+with open("resultat.txt", "w") as fichier:
+    for i in lst : 
+        print(dfTest.iloc[i])
+        fichier.write("\t")
+        fichier.write(i)
+        fichier.write('\n')
+#%%
+predictions = catNB.predict(dfTest.loc[:, dfTest.columns != 'label'])
 # Arbre de décision (Random Forest)
 # K plus proches voisins
+#%%
+print(dfTest.iloc[:,0])
+df_coucou = dfTest.iloc[:,0]+ pd.DataFrame(catNB.predict(dfTest.loc[:, dfTest.columns != 'label']))
+print(df_coucou)
+df_coucou.to_csv('predictions.txt')
