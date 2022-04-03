@@ -33,14 +33,14 @@ df["classeAge"] = np.select(conditions, choices, default=0)
 # Education : Numérisation/Ordonnement
 df['cps19_education'] = df['cps19_education'].replace({'No schooling':0, 'Some elementary school':1, 'Completed elementary school':2,'Some secondary/ high school': 3, 'Completed secondary/ high school': 4, 'Some technical, community college, CEGEP, College Classique': 5, 'Completed technical, community college, CEGEP, College Classique': 6, 'Some university': 7, "Bachelor's degree": 8, "Master's degree":9, 'Professional degree or doctorate': 10, "Don't know/ Prefer not to answer": -1})
 
-if MODE == 1:
-    #print(df[df['cps19_education'] == -1])
-    edu = np.array(df['cps19_education'])
-    edu_mean = int(np.mean(edu[edu > -1]))
-    #print(np.mean(edu[edu>-1]))
-    #print(np.median(edu[edu>-1]))
-    #df[df['cps19_education'] == -1]['cps19_education'] = int(np.mean(edu[edu > -1]))
-    df.loc[df['cps19_education'] == -1, ['cps19_education']] = edu_mean
+#if MODE == 1:
+#print(df[df['cps19_education'] == -1])
+edu = np.array(df['cps19_education'])
+edu_mean = int(np.mean(edu[edu > -1]))
+#print(np.mean(edu[edu>-1]))
+#print(np.median(edu[edu>-1]))
+#df[df['cps19_education'] == -1]['cps19_education'] = int(np.mean(edu[edu > -1]))
+df.loc[df['cps19_education'] == -1, ['cps19_education']] = edu_mean
 
 # Emploi : Remplacement de "je ne sais pas" par "autre"
 df['cps19_employment']= df['cps19_employment'].replace({"Don't know/ Prefer not to answer": 'Other'})
