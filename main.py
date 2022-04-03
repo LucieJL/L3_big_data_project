@@ -9,8 +9,13 @@ from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, r
 
 ''' Paramétrage '''
 
+# 0 => Catégorie non ordonnées
+# 1 => Numérique ordonné
+MODE = 0
+
 df = pd.read_csv('CES19.csv')
 testIndexes = pd.read_csv('exemple.txt', sep='\t', header=None)
+
 
 ''' Pipeline de prétraitrement '''
 
@@ -26,15 +31,16 @@ conditions = [(df[col]>=18) & (df[col]<29),
 df["classeAge"] = np.select(conditions, choices, default=0)
 
 # Education : Numérisation/Ordonnement
-df['cps19_education']= df['cps19_education'].replace({'No schooling':0, 'Some elementary school':1, 'Completed elementary school':2,'Some secondary/ high school': 3, 'Completed secondary/ high school': 4, 'Some technical, community college, CEGEP, College Classique': 5, 'Completed technical, community college, CEGEP, College Classique': 6, 'Some university': 7, "Bachelor's degree": 8, "Master's degree":9, 'Professional degree or doctorate': 10, "Don't know/ Prefer not to answer": -1})
+df['cps19_education'] = df['cps19_education'].replace({'No schooling':0, 'Some elementary school':1, 'Completed elementary school':2,'Some secondary/ high school': 3, 'Completed secondary/ high school': 4, 'Some technical, community college, CEGEP, College Classique': 5, 'Completed technical, community college, CEGEP, College Classique': 6, 'Some university': 7, "Bachelor's degree": 8, "Master's degree":9, 'Professional degree or doctorate': 10, "Don't know/ Prefer not to answer": -1})
 
-#print(df[df['cps19_education'] == -1])
-edu = np.array(df['cps19_education'])
-edu_mean = int(np.mean(edu[edu > -1]))
-#print(np.mean(edu[edu>-1]))
-#print(np.median(edu[edu>-1]))
-#df[df['cps19_education'] == -1]['cps19_education'] = int(np.mean(edu[edu > -1]))
-df.loc[df['cps19_education'] == -1, ['cps19_education']] = edu_mean
+if MODE == 1:
+    #print(df[df['cps19_education'] == -1])
+    edu = np.array(df['cps19_education'])
+    edu_mean = int(np.mean(edu[edu > -1]))
+    #print(np.mean(edu[edu>-1]))
+    #print(np.median(edu[edu>-1]))
+    #df[df['cps19_education'] == -1]['cps19_education'] = int(np.mean(edu[edu > -1]))
+    df.loc[df['cps19_education'] == -1, ['cps19_education']] = edu_mean
 
 # Emploi : Remplacement de "je ne sais pas" par "autre"
 df['cps19_employment']= df['cps19_employment'].replace({"Don't know/ Prefer not to answer": 'Other'})
@@ -82,28 +88,39 @@ df['label'] = df['cps19_votechoice'] + df['cps19_votechoice_pr'] + df['cps19_vot
 
 ''' Sélection des attributs '''
 
-attributes = [
-    'classeAge',
-    'cps19_gender',
-    'cps19_education',
-    'cps19_employment',
-    'cps19_religion',
-    'label'
-]
+attributes = []
+
+if MODE == 0:
+    attributes = [
+        'classeAge',
+        'cps19_gender',
+        'cps19_education',
+        'cps19_employment',
+        'cps19_religion',
+        'label'
+    ]
+elif MODE == 1:
+    attributes = [
+        'classeAge',
+        'cps19_education',
+        'label'
+    ]
 
 df = df[attributes]
 
 # Version avec les catégories
-gender_unq = list(df['cps19_gender'].unique())
-df['cps19_gender'] = df['cps19_gender'].apply(lambda x: gender_unq.index(x))
-religion_unq = list(df['cps19_religion'].unique())
-df['cps19_religion'] = df['cps19_religion'].apply(lambda x: religion_unq.index(x))
-emp_unq = list(df['cps19_employment'].unique())
-df['cps19_employment'] = df['cps19_employment'].apply(lambda x: emp_unq.index(x))
+if MODE == 0:
+    gender_unq = list(df['cps19_gender'].unique())
+    df['cps19_gender'] = df['cps19_gender'].apply(lambda x: gender_unq.index(x))
+    religion_unq = list(df['cps19_religion'].unique())
+    df['cps19_religion'] = df['cps19_religion'].apply(lambda x: religion_unq.index(x))
+    emp_unq = list(df['cps19_employment'].unique())
+    df['cps19_employment'] = df['cps19_employment'].apply(lambda x: emp_unq.index(x))
 
-# Version avec les vecteurs (recommenter les attributs correspondants plus haut)
-'''df = df.join(pd.DataFrame(np.concatenate((onehotlabelsGenre, onehotlabelsRelig, onehotlabelsEmp), axis=1)))
-df.columns = [str(col) for col in df.columns]'''
+elif MODE == 1:
+    # Version avec les vecteurs (recommenter les attributs correspondants plus haut)
+    df = df.join(pd.DataFrame(np.concatenate((onehotlabelsGenre, onehotlabelsRelig, onehotlabelsEmp), axis=1)))
+    df.columns = [str(col) for col in df.columns]
 
 ''' Séparation du dataset de test '''
 
