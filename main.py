@@ -12,7 +12,7 @@ from scipy import stats
 
 # 0 => Catégorie non ordonnées
 # 1 => Numérique ordonné
-MODE = 1
+MODE = 0
 
 df = pd.read_csv('CES19.csv')
 testIndexes = pd.read_csv('exemple.txt', sep='\t', header=None)
@@ -30,9 +30,30 @@ conditions = [(df[col]>=18) & (df[col]<29),
             (df[col]>=55) & (df[col]<66),
             (df[col]>=66)]
 df["classeAge"] = np.select(conditions, choices, default=0)
-print(df['cps19_fed_id'].unique())
+#print(df['cps19_lead_strong'].unique())
+atts = [
+    'cps19_lead_strong_113',
+    'cps19_lead_strong_114',
+    'cps19_lead_strong_115',
+    'cps19_lead_strong_116',
+    'cps19_lead_strong_117',
+    'cps19_lead_strong_118',
+    'cps19_lead_strong_119',
+    'cps19_lead_strong_120'
+]
+print(df[atts].isna().all(axis=1).value_counts())
+print(df[[col for col in df.columns if 'cps19_lead_strong' in col]])
+print(df['cps19_pos_life'].isna().value_counts())
+#print(df['cps19_spend_educ'].isna().value_counts())
+#print(df['cps19_spend_env'].isna().value_counts())
+#print(df['cps19_spend_just_law'].isna().value_counts())
+#print(df['cps19_spend_defence'].isna().value_counts())
+#print(df['cps19_spend_imm_min'].isna().value_counts())
+#print(df['cps19_spend_imm_min'].unique())
 df.dropna(subset=['cps19_prov_id'], inplace=True)
 df.dropna(subset=['cps19_vote_2015'], inplace=True)
+
+
 #print(df['cps19_vote_2015'].unique())
 
 # Education : Numérisation/Ordonnement
@@ -107,6 +128,11 @@ if MODE == 0:
         'cps19_prov_id',
         'cps19_vote_2015',
         'cps19_fed_id',
+        'cps19_spend_educ',
+        'cps19_spend_env',
+        'cps19_spend_just_law',
+        'cps19_spend_defence',
+        'cps19_spend_imm_min',
         'label'
     ]
 elif MODE == 1:
@@ -120,6 +146,15 @@ df = df[attributes]
 
 # Version avec les catégories
 if MODE == 0:
+    le = preprocessing.LabelEncoder()
+    le.fit(df['cps19_spend_imm_min'].unique())
+    df['cps19_spend_educ'] = le.transform(df['cps19_spend_educ'])
+    print(df['cps19_spend_educ'])
+    df['cps19_spend_env'] = le.transform(df['cps19_spend_env'])
+    df['cps19_spend_just_law'] = le.transform(df['cps19_spend_just_law'])
+    df['cps19_spend_defence'] = le.transform(df['cps19_spend_defence'])
+    df['cps19_spend_imm_min'] = le.transform(df['cps19_spend_imm_min'])
+
     gender_unq = list(df['cps19_gender'].unique())
     df['cps19_gender'] = df['cps19_gender'].apply(lambda x: gender_unq.index(x))
     religion_unq = list(df['cps19_religion'].unique())
@@ -146,11 +181,12 @@ dfTrain = df[~df.index.isin(testIndexes[0])]
 # Retirer les ~1000 individus sans reponses (1226)
 dfTrain = dfTrain[dfTrain['label'] != '']
 #print(dfTrain['cps19_vote_2015'].isna().value_counts())
-'''crosstab = pd.crosstab(dfTrain['cps19_fed_id'], dfTrain['label'])
+#print(dfTrain)
+'''crosstab = pd.crosstab(dfTrain['cps19_spend_imm_min'], dfTrain['label'])
 
 print(stats.chi2_contingency(crosstab))
-exit(0)'''
-
+exit(0)
+'''
 ''' Entrainement '''
 
 def detailPrint(y_test,y_test_pred):
@@ -189,11 +225,11 @@ for train_index, test_index in kf.split(dfTrain):
     detailPrint(y_test,y_test_pred)
     
     #MultinomialNB
-    print('MultinomialNB')
+    '''print('MultinomialNB')
     multNB.fit(X_train, y_train)
     y_test_pred = multNB.predict(X_test)
     lst_multNB_accuracy.append(accuracy_score(y_test, y_test_pred))
-    detailPrint(y_test,y_test_pred)
+    detailPrint(y_test,y_test_pred)'''
    
     # RandomForestClassifier
     print("RandomForestClassifier")
@@ -215,9 +251,9 @@ for train_index, test_index in kf.split(dfTrain):
 print('--CategorialNB-- ')
 print('max exactitude : ' + str(max(lst_catNB_accuracy)))
 print('mean exactitude : ' + str(sum(lst_catNB_accuracy) / len(lst_catNB_accuracy)))
-print('--MultinomialNB-- ')
+'''print('--MultinomialNB-- ')
 print('max exactitude : ' + str(max(lst_multNB_accuracy)))
-print('mean exactitude : ' + str(sum(lst_multNB_accuracy) / len(lst_multNB_accuracy)))
+print('mean exactitude : ' + str(sum(lst_multNB_accuracy) / len(lst_multNB_accuracy)))'''
 print("--RandomForestClassifier--")
 print('max exactitude : ' + str(max(lst_rf_accurancy)))
 print('mean exactitude : ' + str(sum(lst_rf_accurancy) / len(lst_rf_accurancy)))
