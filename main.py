@@ -6,6 +6,7 @@ from sklearn.model_selection import KFold
 from sklearn.naive_bayes import CategoricalNB
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+from scipy import stats
 
 ''' Paramétrage '''
 
@@ -29,6 +30,10 @@ conditions = [(df[col]>=18) & (df[col]<29),
             (df[col]>=55) & (df[col]<66),
             (df[col]>=66)]
 df["classeAge"] = np.select(conditions, choices, default=0)
+print(df['cps19_fed_id'].unique())
+df.dropna(subset=['cps19_prov_id'], inplace=True)
+df.dropna(subset=['cps19_vote_2015'], inplace=True)
+#print(df['cps19_vote_2015'].unique())
 
 # Education : Numérisation/Ordonnement
 df['cps19_education'] = df['cps19_education'].replace({'No schooling':0, 'Some elementary school':1, 'Completed elementary school':2,'Some secondary/ high school': 3, 'Completed secondary/ high school': 4, 'Some technical, community college, CEGEP, College Classique': 5, 'Completed technical, community college, CEGEP, College Classique': 6, 'Some university': 7, "Bachelor's degree": 8, "Master's degree":9, 'Professional degree or doctorate': 10, "Don't know/ Prefer not to answer": -1})
@@ -86,6 +91,8 @@ label_cols = [
 df[label_cols] = df[label_cols].fillna('')
 df['label'] = df['cps19_votechoice'] + df['cps19_votechoice_pr'] + df['cps19_vote_unlikely'] + df['cps19_vote_unlike_pr'] + df['cps19_v_advance']
 
+#print(df[[col for col in df.columns if 'cps19_2nd_choice' in col]])
+#print(df['cps19_prov_id'].unique())
 ''' Sélection des attributs '''
 
 attributes = []
@@ -97,6 +104,9 @@ if MODE == 0:
         'cps19_education',
         'cps19_employment',
         'cps19_religion',
+        'cps19_prov_id',
+        'cps19_vote_2015',
+        'cps19_fed_id',
         'label'
     ]
 elif MODE == 1:
@@ -116,6 +126,12 @@ if MODE == 0:
     df['cps19_religion'] = df['cps19_religion'].apply(lambda x: religion_unq.index(x))
     emp_unq = list(df['cps19_employment'].unique())
     df['cps19_employment'] = df['cps19_employment'].apply(lambda x: emp_unq.index(x))
+    prov_unq = list(df['cps19_prov_id'].unique())
+    df['cps19_prov_id'] = df['cps19_prov_id'].apply(lambda x: prov_unq.index(x))
+    vote_unq = list(df['cps19_vote_2015'].unique())
+    df['cps19_vote_2015'] = df['cps19_vote_2015'].apply(lambda x: vote_unq.index(x))
+    fed_unq = list(df['cps19_fed_id'].unique())
+    df['cps19_fed_id'] = df['cps19_fed_id'].apply(lambda x: fed_unq.index(x))
 
 elif MODE == 1:
     # Version avec les vecteurs (recommenter les attributs correspondants plus haut)
@@ -129,6 +145,11 @@ dfTrain = df[~df.index.isin(testIndexes[0])]
 
 # Retirer les ~1000 individus sans reponses (1226)
 dfTrain = dfTrain[dfTrain['label'] != '']
+#print(dfTrain['cps19_vote_2015'].isna().value_counts())
+'''crosstab = pd.crosstab(dfTrain['cps19_fed_id'], dfTrain['label'])
+
+print(stats.chi2_contingency(crosstab))
+exit(0)'''
 
 ''' Entrainement '''
 
