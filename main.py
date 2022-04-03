@@ -30,20 +30,34 @@ conditions = [(df[col]>=18) & (df[col]<29),
             (df[col]>=55) & (df[col]<66),
             (df[col]>=66)]
 df["classeAge"] = np.select(conditions, choices, default=0)
+
+# Lead : Conversion en bit
 #print(df['cps19_lead_strong'].unique())
-atts = [
-    'cps19_lead_strong_113',
-    'cps19_lead_strong_114',
-    'cps19_lead_strong_115',
-    'cps19_lead_strong_116',
-    'cps19_lead_strong_117',
-    'cps19_lead_strong_118',
-    'cps19_lead_strong_119',
-    'cps19_lead_strong_120'
+lead_trust_atts = [
+    'cps19_lead_trust_113', 'cps19_lead_trust_114',
+    'cps19_lead_trust_115', 'cps19_lead_trust_116', 'cps19_lead_trust_117',
+    'cps19_lead_trust_118', 'cps19_lead_trust_119', 'cps19_lead_trust_120'
 ]
-print(df[atts].isna().all(axis=1).value_counts())
-print(df[[col for col in df.columns if 'cps19_lead_strong' in col]])
-print(df['cps19_pos_life'].isna().value_counts())
+lead_int_atts = [
+    'cps19_lead_int_113', 'cps19_lead_int_114',
+    'cps19_lead_int_115', 'cps19_lead_int_116', 'cps19_lead_int_117',
+    'cps19_lead_int_118', 'cps19_lead_int_119', 'cps19_lead_int_120'
+]
+lead_strong_atts = [
+    'cps19_lead_strong_113', 'cps19_lead_strong_114',
+    'cps19_lead_strong_115', 'cps19_lead_strong_116', 'cps19_lead_strong_117',
+    'cps19_lead_strong_118', 'cps19_lead_strong_119', 'cps19_lead_strong_120'
+]
+#print(df[atts].isna().all(axis=1).value_counts())
+#print(df[[col for col in df.columns if 'cps19_lead_int' in col]])
+df[lead_trust_atts] = df[lead_trust_atts].isna().astype(int)
+df[lead_int_atts] = df[lead_int_atts].isna().astype(int)
+df[lead_strong_atts] = df[lead_strong_atts].isna().astype(int)
+
+print(df[[col for col in df.columns if 'cps19_most_seats' in col]].isna().any(axis=1).value_counts())
+print(df[[col for col in df.columns if 'cps19_most_seats' in col]])
+#print(df['cps19_most_seats'].isna().value_counts())
+#print(df['cps19_province'].isna().value_counts())
 #print(df['cps19_spend_educ'].isna().value_counts())
 #print(df['cps19_spend_env'].isna().value_counts())
 #print(df['cps19_spend_just_law'].isna().value_counts())
@@ -52,7 +66,7 @@ print(df['cps19_pos_life'].isna().value_counts())
 #print(df['cps19_spend_imm_min'].unique())
 df.dropna(subset=['cps19_prov_id'], inplace=True)
 df.dropna(subset=['cps19_vote_2015'], inplace=True)
-
+exit()
 
 #print(df['cps19_vote_2015'].unique())
 
@@ -133,8 +147,9 @@ if MODE == 0:
         'cps19_spend_just_law',
         'cps19_spend_defence',
         'cps19_spend_imm_min',
+        'cps19_province',
         'label'
-    ]
+    ] + lead_strong_atts + lead_int_atts + lead_trust_atts
 elif MODE == 1:
     attributes = [
         'classeAge',
@@ -155,6 +170,8 @@ if MODE == 0:
     df['cps19_spend_defence'] = le.transform(df['cps19_spend_defence'])
     df['cps19_spend_imm_min'] = le.transform(df['cps19_spend_imm_min'])
 
+    province_unq = list(df['cps19_province'].unique())
+    df['cps19_province'] = df['cps19_province'].apply(lambda x: province_unq.index(x))
     gender_unq = list(df['cps19_gender'].unique())
     df['cps19_gender'] = df['cps19_gender'].apply(lambda x: gender_unq.index(x))
     religion_unq = list(df['cps19_religion'].unique())
@@ -182,7 +199,7 @@ dfTrain = df[~df.index.isin(testIndexes[0])]
 dfTrain = dfTrain[dfTrain['label'] != '']
 #print(dfTrain['cps19_vote_2015'].isna().value_counts())
 #print(dfTrain)
-'''crosstab = pd.crosstab(dfTrain['cps19_spend_imm_min'], dfTrain['label'])
+'''crosstab = pd.crosstab(dfTrain['cps19_province'], dfTrain['label'])
 
 print(stats.chi2_contingency(crosstab))
 exit(0)
