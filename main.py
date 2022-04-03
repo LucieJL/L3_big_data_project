@@ -1,17 +1,13 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 from sklearn import preprocessing
 from sklearn.model_selection import KFold
 from sklearn.naive_bayes import CategoricalNB, MultinomialNB
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+from scipy import stats
 
 ''' Paramétrage '''
-
-# 0 => Catégorie non ordonnées
-# 1 => Numérique ordonné
-MODE = 0
 
 df = pd.read_csv('CES19.csv')
 testIndexes = pd.read_csv('exemple.txt', sep='\t', header=None)
@@ -30,10 +26,49 @@ conditions = [(df[col]>=18) & (df[col]<29),
             (df[col]>=66)]
 df["classeAge"] = np.select(conditions, choices, default=0)
 
+# Lead : Conversion en bit
+lead_trust_atts = [
+    'cps19_lead_trust_113', 'cps19_lead_trust_114',
+    'cps19_lead_trust_115', 'cps19_lead_trust_116', 'cps19_lead_trust_117',
+    'cps19_lead_trust_118', 'cps19_lead_trust_119', 'cps19_lead_trust_120'
+]
+lead_int_atts = [
+    'cps19_lead_int_113', 'cps19_lead_int_114',
+    'cps19_lead_int_115', 'cps19_lead_int_116', 'cps19_lead_int_117',
+    'cps19_lead_int_118', 'cps19_lead_int_119', 'cps19_lead_int_120'
+]
+lead_strong_atts = [
+    'cps19_lead_strong_113', 'cps19_lead_strong_114',
+    'cps19_lead_strong_115', 'cps19_lead_strong_116', 'cps19_lead_strong_117',
+    'cps19_lead_strong_118', 'cps19_lead_strong_119', 'cps19_lead_strong_120'
+]
+#print(df[atts].isna().all(axis=1).value_counts())
+#print(df[[col for col in df.columns if 'cps19_lead_int' in col]])
+df[lead_trust_atts] = df[lead_trust_atts].isna().astype(int)
+df[lead_int_atts] = df[lead_int_atts].isna().astype(int)
+df[lead_strong_atts] = df[lead_strong_atts].isna().astype(int)
+
+#print(df['cps19_demsat'].isna().value_counts())
+#print(df['cps19_demsat'].unique())
+'''print(df[[col for col in df.columns if 'cps19_party_member' in col]].isna().all(axis=1).value_counts())
+print(df[[col for col in df.columns if 'cps19_party_member' in col]])'''
+#print()
+#exit()
+#print(df['cps19_party_member'].isna().value_counts())
+#print(df['cps19_province'].isna().value_counts())
+#print(df['cps19_spend_educ'].isna().value_counts())
+#print(df['cps19_spend_env'].isna().value_counts())
+#print(df['cps19_spend_just_law'].isna().value_counts())
+#print(df['cps19_spend_defence'].isna().value_counts())
+#print(df['cps19_spend_imm_min'].isna().value_counts())
+#print(df['cps19_spend_imm_min'].unique())
+df.dropna(subset=['cps19_prov_id'], inplace=True)
+df.dropna(subset=['cps19_vote_2015'], inplace=True)
+
+
 # Education : Numérisation/Ordonnement
 df['cps19_education'] = df['cps19_education'].replace({'No schooling':0, 'Some elementary school':1, 'Completed elementary school':2,'Some secondary/ high school': 3, 'Completed secondary/ high school': 4, 'Some technical, community college, CEGEP, College Classique': 5, 'Completed technical, community college, CEGEP, College Classique': 6, 'Some university': 7, "Bachelor's degree": 8, "Master's degree":9, 'Professional degree or doctorate': 10, "Don't know/ Prefer not to answer": -1})
 
-#if MODE == 1:
 #print(df[df['cps19_education'] == -1])
 edu = np.array(df['cps19_education'])
 edu_mean = int(np.mean(edu[edu > -1]))
@@ -52,29 +87,8 @@ df['cps19_religion']=df['cps19_religion'].replace({"None/ Don't have one/ Atheis
 df['row_num'] = df.reset_index().index
 
 
-#Genre rien à faire 
+#Genre rien à faire
 
-# OHE sur employment + relig + genre
-emp = df[['cps19_employment']]
-relig = df[['cps19_religion']]
-genre = df[['cps19_gender']]
-
-le = preprocessing.LabelEncoder()
-
-emp_2 = emp.apply(le.fit_transform)
-relig_2 = relig.apply(le.fit_transform)
-genre_2 = genre.apply(le.fit_transform)
-
-enc = preprocessing.OneHotEncoder()
-
-enc.fit(emp_2)
-onehotlabelsEmp = enc.transform(emp_2).toarray()
-
-enc.fit(relig_2)
-onehotlabelsRelig = enc.transform(relig_2).toarray()
-
-enc.fit(genre_2)
-onehotlabelsGenre = enc.transform(genre_2).toarray()
 
 ''' Fusionner les étiquettes pour avoir une seule colonne label df['label']'''
 
@@ -88,43 +102,59 @@ label_cols = [
 df[label_cols] = df[label_cols].fillna('')
 df['label'] = df['cps19_votechoice'] + df['cps19_votechoice_pr'] + df['cps19_vote_unlikely'] + df['cps19_vote_unlike_pr'] + df['cps19_v_advance']
 
+
 ''' Sélection des attributs '''
 
-attributes = []
-
-if MODE == 0:
-    attributes = [
-        'row_num',
-        'classeAge',
-        'cps19_gender',
-        'cps19_education',
-        'cps19_employment',
-        'cps19_religion',
-        'label'
-    ]
-elif MODE == 1:
-    attributes = [
-        'row_num'
-        'classeAge',
-        'cps19_education',
-        'label'
-    ]
+attributes = [
+    'classeAge',
+    'cps19_gender',
+    'cps19_education',
+    'cps19_employment',
+    'cps19_religion',
+    'cps19_prov_id',
+    'cps19_vote_2015',
+    'cps19_fed_id',
+    'cps19_spend_educ',
+    'cps19_spend_env',
+    'cps19_spend_just_law',
+    'cps19_spend_defence',
+    'cps19_spend_imm_min',
+    'cps19_province', # bof
+    'cps19_bornin_canada', # bof
+    'cps19_children', # bof
+    'cps19_marital', # bof
+    'cps19_union', # bof
+    'cps19_sexuality', # bof
+    'cps19_demsat', # bof
+    'label'
+] + lead_strong_atts + lead_int_atts + lead_trust_atts
 
 df = df[attributes]
 
-# Version avec les catégories
-if MODE == 0:
-    gender_unq = list(df['cps19_gender'].unique())
-    df['cps19_gender'] = df['cps19_gender'].apply(lambda x: gender_unq.index(x))
-    religion_unq = list(df['cps19_religion'].unique())
-    df['cps19_religion'] = df['cps19_religion'].apply(lambda x: religion_unq.index(x))
-    emp_unq = list(df['cps19_employment'].unique())
-    df['cps19_employment'] = df['cps19_employment'].apply(lambda x: emp_unq.index(x))
+for attr in [
+    'cps19_gender',
+    'cps19_employment',
+    'cps19_religion',
+    'cps19_prov_id',
+    'cps19_vote_2015',
+    'cps19_fed_id',
+    'cps19_spend_educ',
+    'cps19_spend_env',
+    'cps19_spend_just_law',
+    'cps19_spend_defence',
+    'cps19_spend_imm_min',
+    'cps19_province', # bof
+    'cps19_bornin_canada', # bof
+    'cps19_children', # bof
+    'cps19_marital', # bof
+    'cps19_union', # bof
+    'cps19_sexuality', # bof
+    'cps19_demsat',
+]:
+    le = preprocessing.LabelEncoder()
+    le.fit(df[attr].unique())
+    df[attr] = le.transform(df[attr])
 
-elif MODE == 1:
-    # Version avec les vecteurs (recommenter les attributs correspondants plus haut)
-    df = df.join(pd.DataFrame(np.concatenate((onehotlabelsGenre, onehotlabelsRelig, onehotlabelsEmp), axis=1)))
-    df.columns = [str(col) for col in df.columns]
 
 ''' Séparation du dataset de test '''
 
@@ -133,6 +163,14 @@ dfTrain = df[~df.index.isin(testIndexes[0])]
 
 # Retirer les ~1000 individus sans reponses (1226)
 dfTrain = dfTrain[dfTrain['label'] != '']
+
+
+''' chi square si besoin
+crosstab = pd.crosstab(dfTrain['cps19_province'], dfTrain['label'])
+
+print(stats.chi2_contingency(crosstab))
+exit(0)
+'''
 
 ''' Entrainement '''
 
@@ -172,14 +210,6 @@ for train_index, test_index in kf.split(dfTrain):
     y_test_pred = catNB.predict(X_test)
     lst_catNB_accuracy.append(accuracy_score(y_test, y_test_pred))
     detailPrint(y_test,y_test_pred)
-    
-    
-    #MultinomialNB
-    print('MultinomialNB')
-    multNB.fit(X_train, y_train)
-    y_test_pred = multNB.predict(X_test)
-    lst_multNB_accuracy.append(accuracy_score(y_test, y_test_pred))
-    detailPrint(y_test,y_test_pred)
    
     # RandomForestClassifier
     print("RandomForestClassifier")
@@ -201,10 +231,6 @@ for train_index, test_index in kf.split(dfTrain):
 print('--CategorialNB-- ')
 print('max exactitude : ' + str(max(lst_catNB_accuracy)))
 print('mean exactitude : ' + str(sum(lst_catNB_accuracy) / len(lst_catNB_accuracy)))
-
-print('--MultinomialNB-- ')
-print('max exactitude : ' + str(max(lst_multNB_accuracy)))
-print('mean exactitude : ' + str(sum(lst_multNB_accuracy) / len(lst_multNB_accuracy)))
 print("--RandomForestClassifier--")
 print('max exactitude : ' + str(max(lst_rf_accurancy)))
 print('mean exactitude : ' + str(sum(lst_rf_accurancy) / len(lst_rf_accurancy)))
