@@ -239,27 +239,15 @@ print('mean exactitude : ' + str(sum(lst_rf_accurancy) / len(lst_rf_accurancy)))
 
 # Classificateur naïf de bayes
 
-#lst=catNB.predict(dfTest.drop(columns=['label','row_num' ]))
-#print(lst)
+#Création de dp de sortie avec liste tampon pour les indexs puis ajoute prediction et création du fichier .txt
+#Avec l'algo catNB
+df_sortie=pd.DataFrame()
+lst=[]
+lst=dfTest['row_num'].tolist()
+df_sortie["row_num"] = lst
+df_sortie["label"]=catNB.predict(dfTest.drop(columns=['label','row_num']))
+df_sortie.to_csv('prediction.txt', index=False, sep="\t", header=False)
 
-df_sortie=pd.DataFrame(catNB.predict(dfTest.drop(columns=['label','row_num' ])))
-df_sortie["row_num"] = dfTest['row_num'] 
-#%%
-print(df_sortie)
-print(dfTest['row_num'] )
-#%%
-with open("resultat.txt", "w") as fichier:
-    for i in lst : 
-        print(dfTest.iloc[i])
-        fichier.write("\t")
-        fichier.write(i)
-        fichier.write('\n')
-#%%
-predictions = catNB.predict(dfTest.loc[:, dfTest.columns != 'label'])
 # Arbre de décision (Random Forest)
 # K plus proches voisins
-#%%
-print(dfTest.iloc[:,0])
-df_coucou = dfTest.iloc[:,0]+ pd.DataFrame(catNB.predict(dfTest.loc[:, dfTest.columns != 'label']))
-print(df_coucou)
-df_coucou.to_csv('predictions.txt')
+
