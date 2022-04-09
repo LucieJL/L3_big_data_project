@@ -5,6 +5,7 @@ from sklearn.model_selection import KFold
 from sklearn.naive_bayes import CategoricalNB, MultinomialNB
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+from sklearn.cluster import Birch, KMeans
 from scipy import stats
 
 ''' Paramétrage '''
@@ -84,10 +85,40 @@ df['cps19_employment']= df['cps19_employment'].replace({"Don't know/ Prefer not 
 #Non religieux/oriental/juif/musulman/chretiens/chretiens déviré/other
 df['cps19_religion']=df['cps19_religion'].replace({"None/ Don't have one/ Atheist":'Non religieux', 'Agnostic':'Non religieux', 'Buddhist/ Buddhism':'oriental', 'Hindu':'oriental', 'Jewish/ Judaism/ Jewish Orthodox':'juif', 'Muslim/ Islam': 'musulman', 'Sikh/ Sikhism':'oriental', "Anglican/ Church of England":'chretiens', 'Baptist':'chretiens', 'Catholic/ Roman Catholic/ RC':'chretiens', "Greek Orthodox/ Ukrainian Orthodox/ Russian Orthodox/ Eastern Orthodox": 'chretiens', "Jehovah's Witness":'chretiens', 'Lutheran':'chretiens', "Mormon/ Church of Jesus Christ of the Latter Day Saints":'chretiens déviré', 'Pentecostal/ Fundamentalist/ Born Again/ Evangelical':'chretiens déviré','Presbyterian':'chretiens','Protestant':'chretiens', 'United Church of Canada':'chretiens', 'Christian Reformed':'chretiens', 'Salvation Army':'chretiens', 'Mennonite':'chretiens déviré', 'Other (please specify)':'other',"Don't know/ Prefer not to answer":'other'})
 #print(df['cps19_religion'])
-df['row_num'] = df.reset_index().index
+#df['row_num'] = df.reset_index().index
 
 
 #Genre rien à faire
+
+''' Clustering des attributs ordonnables '''
+
+conversion_attributes = {
+    'Strongly disagree': 0,
+    'Somewhat disagree': 1,
+    'Neither agree nor disagree': 2,
+    'Somewhat agree': 3,
+    'Strongly agree': 4,
+    "Don't know/ Prefer not to answer": 2,
+    np.nan: 2
+}
+
+to_cluster = [
+    'cps19_pos_cannabis',
+    'cps19_pos_life',
+    'cps19_pos_fptp',
+    'cps19_pos_carbon',
+    'cps19_pos_energy',
+    'cps19_pos_envreg',
+    'cps19_pos_jobs',
+    'cps19_pos_subsid',
+    'cps19_pos_trade'
+]
+df[to_cluster] = df[to_cluster].applymap(lambda x: conversion_attributes[x])
+print(df['cps19_pos_cannabis'].unique())
+
+brc = Birch(n_clusters=8)
+brc.fit(df[to_cluster])
+df['cps19_pos'] = brc.predict(df[to_cluster])
 
 
 ''' Fusionner les étiquettes pour avoir une seule colonne label df['label']'''
@@ -126,6 +157,7 @@ attributes = [
     'cps19_union', # bof
     'cps19_sexuality', # bof
     'cps19_demsat', # bof
+    'cps19_pos',
     'label'
 ] + lead_strong_atts + lead_int_atts + lead_trust_atts
 
@@ -197,11 +229,11 @@ kf = KFold(n_splits=10)
 for train_index, test_index in kf.split(dfTrain):
     print("TRAIN:", train_index, "TEST:", test_index)
 
-    #X_train = dfTrain.iloc[train_index].loc[:, dfTrain.columns != 'label']
-    X_train = dfTrain.drop(columns=['label','row_num' ]).iloc[train_index, :]
+    X_train = dfTrain.iloc[train_index].loc[:, dfTrain.columns != 'label']
+    #X_train = dfTrain.drop(columns=['label','row_num' ]).iloc[train_index, :]
     y_train = dfTrain.iloc[train_index]['label']
-    #X_test = dfTrain.iloc[test_index].loc[:, dfTrain.columns != 'label']
-    X_test = dfTrain.drop(columns=['label','row_num' ]).iloc[test_index, :]
+    X_test = dfTrain.iloc[test_index].loc[:, dfTrain.columns != 'label']
+    #X_test = dfTrain.drop(columns=['label','row_num' ]).iloc[test_index, :]
     y_test = dfTrain.iloc[test_index]['label']
 
     #CategoricalNB
@@ -241,12 +273,12 @@ print('mean exactitude : ' + str(sum(lst_rf_accurancy) / len(lst_rf_accurancy)))
 
 #Création de dp de sortie avec liste tampon pour les indexs puis ajoute prediction et création du fichier .txt
 #Avec l'algo catNB
-df_sortie=pd.DataFrame()
+'''df_sortie=pd.DataFrame()
 lst=[]
 lst=dfTest['row_num'].tolist()
 df_sortie["row_num"] = lst
 df_sortie["label"]=catNB.predict(dfTest.drop(columns=['label','row_num']))
-df_sortie.to_csv('prediction.txt', index=False, sep="\t", header=False)
+df_sortie.to_csv('prediction.txt', index=False, sep="\t", header=False)'''
 
 # Arbre de décision (Random Forest)
 # K plus proches voisins
