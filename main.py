@@ -2,11 +2,10 @@ import pandas as pd
 import numpy as np
 from sklearn import preprocessing
 from sklearn.model_selection import KFold
-from sklearn.naive_bayes import CategoricalNB, MultinomialNB
+from sklearn.naive_bayes import CategoricalNB
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score, balanced_accuracy_score
 from sklearn.cluster import Birch, KMeans
-from scipy import stats
 
 ''' Paramétrage '''
 
@@ -48,6 +47,9 @@ df['cps19_religion']=df['cps19_religion'].replace({
     "Don't know/ Prefer not to answer":'Other'})
 
 #Genre + éducation rien à faire (si ce n'est encoder)
+
+# Ajout du numéro de ligne de départ dans un attribut
+df['row_num'] = df.index
 
 # Lead : Conversion en booléen (si valeur existe =1, sinon =0)
 lead_trust_atts = [
@@ -110,7 +112,6 @@ to_cluster = [
     'cps19_pos_trade'
 ]
 df[to_cluster] = df[to_cluster].applymap(lambda x: conversion_attributes[x])
-print(df['cps19_pos_cannabis'].unique())
 
 brc = Birch(n_clusters=8)
 brc.fit(df[to_cluster])
@@ -142,7 +143,8 @@ attributes_to_encode = [
 ]
 
 attributes_not_to_encode = [
-    'classeAge',
+    'row_num',
+    'cps19_age',
     'cps19_pos',
     'label'
 ] + lead_strong_atts + lead_int_atts + lead_trust_atts
@@ -170,13 +172,6 @@ dfTrain = df[~df.index.isin(testIndexes[0])]
 dfTrain = dfTrain[dfTrain['label'] != '']
 
 
-''' chi square si besoin
-crosstab = pd.crosstab(dfTrain['cps19_province'], dfTrain['label'])
-
-print(stats.chi2_contingency(crosstab))
-exit(0)
-'''
-
 ''' Entrainement '''
 
 def metrics(y_test,y_test_pred):
@@ -186,76 +181,65 @@ def metrics(y_test,y_test_pred):
     print("Rappel :", recall_score(y_test, y_test_pred, average='macro'))
     print("F1-score :", f1_score(y_test, y_test_pred, average='macro'))
     print("Exactitude équilibrée :", balanced_accuracy_score(y_test, y_test_pred))
-    
 
-catNB = CategoricalNB()
-multNB = MultinomialNB()
-rf = RandomForestClassifier()
 
-lst_catNB_accuracy=[]
-lst_multNB_accuracy=[]
-lst_rf_accurancy=[]
+nb_classifiers = []
+rf_classifiers = []
 
-index_partition=0
+nb_accuracies = []
+rf_accuracies = []
+
+index_partition = 0
 
 # Utilisation de "k-fold cross validation"
 kf = KFold(n_splits=10)
 for train_index, test_index in kf.split(dfTrain):
     print("TRAIN:", train_index, "TEST:", test_index)
 
-    X_train = dfTrain.iloc[train_index].loc[:, dfTrain.columns != 'label']
-    #X_train = dfTrain.drop(columns=['label','row_num' ]).iloc[train_index, :]
+    X_train = dfTrain.drop(columns=['label', 'row_num']).iloc[train_index, :]
     y_train = dfTrain.iloc[train_index]['label']
-    X_test = dfTrain.iloc[test_index].loc[:, dfTrain.columns != 'label']
-    #X_test = dfTrain.drop(columns=['label','row_num' ]).iloc[test_index, :]
+    X_test = dfTrain.drop(columns=['label', 'row_num']).iloc[test_index, :]
     y_test = dfTrain.iloc[test_index]['label']
 
     #CategoricalNB
     print('CategorialNB')
-    catNB.fit(X_train, y_train)
-    y_test_pred = catNB.predict(X_test)
-    lst_catNB_accuracy.append(accuracy_score(y_test, y_test_pred))
-    metrics(y_test,y_test_pred)
+    nb = CategoricalNB()
+    nb_classifiers.append(nb)
+    nb.fit(X_train, y_train)
+    y_test_pred = nb.predict(X_test)
+    nb_accuracies.append(accuracy_score(y_test, y_test_pred))
+    metrics(y_test, y_test_pred)
    
     # RandomForestClassifier
     print("RandomForestClassifier")
+    rf = RandomForestClassifier()
+    rf_classifiers.append(rf)
     rf.fit(X_train, y_train)
     y_test_pred = rf.predict(X_test)
-    lst_rf_accurancy.append(accuracy_score(y_test, y_test_pred))
-    metrics(y_test,y_test_pred)
-    
-    # Classificateur naïf de bayes
-    # https://www.stat4decision.com/fr/foret-aleatoire-avec-python/
+    rf_accuracies.append(accuracy_score(y_test, y_test_pred))
+    metrics(y_test, y_test_pred)
 
-    # Arbre de décision (Random Forest)
-    # https://www.cours-gratuit.com/tutoriel-python/tutoriel-python-matriser-la-classification-nave-baysienne-avec-scikit-learn
-
-    # K plus proches voisins
-    # https://medium.com/@kenzaharifi/bien-comprendre-lalgorithme-des-k-plus-proches-voisins-fonctionnement-et-impl%C3%A9mentation-sur-r-et-a66d2d372679
-    index_partition=index_partition+1
+    index_partition += 1
 
 print('--CategorialNB-- ')
-print('max exactitude : ' + str(max(lst_catNB_accuracy)))
-print('mean exactitude : ' + str(sum(lst_catNB_accuracy) / len(lst_catNB_accuracy)))
+print('max exactitude : ' + str(max(nb_accuracies)))
+print('mean exactitude : ' + str(sum(nb_accuracies) / len(nb_accuracies)))
 print("--RandomForestClassifier--")
-print('max exactitude : ' + str(max(lst_rf_accurancy)))
-print('mean exactitude : ' + str(sum(lst_rf_accurancy) / len(lst_rf_accurancy)))
+print('max exactitude : ' + str(max(rf_accuracies)))
+print('mean exactitude : ' + str(sum(rf_accuracies) / len(rf_accuracies)))
 
-''' Test de l'algorithme '''
+''' Prédiction du dataset de test '''
 
-# Classificateur naïf de bayes
+# Récupération du meilleur classificateur RandomForest durant le KFold
+best_rf = rf_classifiers[rf_accuracies.index(max(rf_accuracies))]
 
-#Création de dp de sortie avec liste tampon pour les indexs puis ajoute prediction et création du fichier .txt
-#Avec l'algo catNB
-'''df_sortie=pd.DataFrame()
-lst=[]
-lst=dfTest['row_num'].tolist()
-df_sortie["row_num"] = lst
-df_sortie["label"]=catNB.predict(dfTest.drop(columns=['label','row_num']))
-df_sortie.to_csv('prediction.txt', index=False, sep="\t", header=False)'''
+# Création du dataframe de sortie, prédiction des labels et sauvegarde en CSV
+df_sortie = pd.DataFrame()
+df_sortie["row_num"] = dfTest['row_num'].tolist()
+df_sortie["label"] = best_rf.predict(dfTest.drop(columns=['label', 'row_num']))
+df_sortie.to_csv('prediction.txt', index=False, sep="\t", header=False)
 
-# Arbre de décision (Random Forest)
-# K plus proches voisins
+
 
 ## Java's garbage collector 
 # Education : Numérisation/Ordonnement
