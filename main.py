@@ -25,15 +25,31 @@ conditions = [(df[col]>=18) & (df[col]<29),
             (df[col]>=45) & (df[col]<55),
             (df[col]>=55) & (df[col]<66),
             (df[col]>=66)]
-df["classeAge"] = np.select(conditions, choices, default=0)
+df["cps19_age"] = np.select(conditions, choices, default=0)
 
-''' Encoding function (needs a list) '''
-def labelEncoder(list_att):
-    for att in list_att:
-        le.fit(df[att].unique())
-        df[att] = le.transform(df[att])
+# Emploi : Remplacement de "je ne sais pas" par "autre" (réduction d'une dimension)
+df['cps19_employment']= df['cps19_employment'].replace({"Don't know/ Prefer not to answer": 'Other (please specify)'})
 
-# Lead : Conversion en bit
+# Religion : Groupement par "grand courant regligieux"
+#Nonreligious (Nonrelig) / Eastern religions (EasternRelig) / Jew / Muslim / Christian / Extremism (ChristianExt)
+df['cps19_religion']=df['cps19_religion'].replace({
+    "None/ Don't have one/ Atheist":'Nonrelig', 'Agnostic':'Nonrelig', 
+    'Buddhist/ Buddhism':'EasternRelig', 'Hindu':'EasternRelig', 'Sikh/ Sikhism':'EasternRelig',
+    'Jewish/ Judaism/ Jewish Orthodox':'Jew', 
+    'Muslim/ Islam': 'Muslim',  
+    "Anglican/ Church of England":'Christian', 'Baptist':'Christian', 'Catholic/ Roman Catholic/ RC':'Christian', 
+    "Greek Orthodox/ Ukrainian Orthodox/ Russian Orthodox/ Eastern Orthodox": 'Christian', 
+    "Jehovah's Witness":'Christian', 'Lutheran':'Christian', 
+    "Mormon/ Church of Jesus Christ of the Latter Day Saints":'ChristianExt', 
+    'Pentecostal/ Fundamentalist/ Born Again/ Evangelical':'ChristianExt',
+    'Presbyterian':'Christian','Protestant':'Christian', 'United Church of Canada':'Christian', 
+    'Christian Reformed':'Christian', 'Salvation Army':'Christian', 
+    'Mennonite':'ChristianExt', 'Other (please specify)':'Other',
+    "Don't know/ Prefer not to answer":'Other'})
+
+#Genre + éducation rien à faire (si ce n'est encoder)
+
+# Lead : Conversion en booléen (si valeur existe =1, sinon =0)
 lead_trust_atts = [
     'cps19_lead_trust_113', 'cps19_lead_trust_114',
     'cps19_lead_trust_115', 'cps19_lead_trust_116', 'cps19_lead_trust_117',
@@ -49,52 +65,14 @@ lead_strong_atts = [
     'cps19_lead_strong_115', 'cps19_lead_strong_116', 'cps19_lead_strong_117',
     'cps19_lead_strong_118', 'cps19_lead_strong_119', 'cps19_lead_strong_120'
 ]
-#print(df[atts].isna().all(axis=1).value_counts())
-#print(df[[col for col in df.columns if 'cps19_lead_int' in col]])
+# Cast en int
 df[lead_trust_atts] = df[lead_trust_atts].isna().astype(int)
 df[lead_int_atts] = df[lead_int_atts].isna().astype(int)
 df[lead_strong_atts] = df[lead_strong_atts].isna().astype(int)
 
-#print(df['cps19_demsat'].isna().value_counts())
-#print(df['cps19_demsat'].unique())
-'''print(df[[col for col in df.columns if 'cps19_party_member' in col]].isna().all(axis=1).value_counts())
-print(df[[col for col in df.columns if 'cps19_party_member' in col]])'''
-#print()
-#exit()
-#print(df['cps19_party_member'].isna().value_counts())
-#print(df['cps19_province'].isna().value_counts())
-#print(df['cps19_spend_educ'].isna().value_counts())
-#print(df['cps19_spend_env'].isna().value_counts())
-#print(df['cps19_spend_just_law'].isna().value_counts())
-#print(df['cps19_spend_defence'].isna().value_counts())
-#print(df['cps19_spend_imm_min'].isna().value_counts())
-#print(df['cps19_spend_imm_min'].unique())
 df.dropna(subset=['cps19_prov_id'], inplace=True)
 df.dropna(subset=['cps19_vote_2015'], inplace=True)
 
-
-# Education : Numérisation/Ordonnement
-df['cps19_education'] = df['cps19_education'].replace({'No schooling':0, 'Some elementary school':1, 'Completed elementary school':2,'Some secondary/ high school': 3, 'Completed secondary/ high school': 4, 'Some technical, community college, CEGEP, College Classique': 5, 'Completed technical, community college, CEGEP, College Classique': 6, 'Some university': 7, "Bachelor's degree": 8, "Master's degree":9, 'Professional degree or doctorate': 10, "Don't know/ Prefer not to answer": -1})
-
-#print(df[df['cps19_education'] == -1])
-edu = np.array(df['cps19_education'])
-edu_mean = int(np.mean(edu[edu > -1]))
-#print(np.mean(edu[edu>-1]))
-#print(np.median(edu[edu>-1]))
-#df[df['cps19_education'] == -1]['cps19_education'] = int(np.mean(edu[edu > -1]))
-df.loc[df['cps19_education'] == -1, ['cps19_education']] = edu_mean
-
-# Emploi : Remplacement de "je ne sais pas" par "autre"
-df['cps19_employment']= df['cps19_employment'].replace({"Don't know/ Prefer not to answer": 'Other'})
-#print(df['cps19_employment'])
-# Religion : Groupement par "grand courant regligieux"
-#Non religieux/oriental/juif/musulman/chretiens/chretiens déviré/other
-df['cps19_religion']=df['cps19_religion'].replace({"None/ Don't have one/ Atheist":'Non religieux', 'Agnostic':'Non religieux', 'Buddhist/ Buddhism':'oriental', 'Hindu':'oriental', 'Jewish/ Judaism/ Jewish Orthodox':'juif', 'Muslim/ Islam': 'musulman', 'Sikh/ Sikhism':'oriental', "Anglican/ Church of England":'chretiens', 'Baptist':'chretiens', 'Catholic/ Roman Catholic/ RC':'chretiens', "Greek Orthodox/ Ukrainian Orthodox/ Russian Orthodox/ Eastern Orthodox": 'chretiens', "Jehovah's Witness":'chretiens', 'Lutheran':'chretiens', "Mormon/ Church of Jesus Christ of the Latter Day Saints":'chretiens déviré', 'Pentecostal/ Fundamentalist/ Born Again/ Evangelical':'chretiens déviré','Presbyterian':'chretiens','Protestant':'chretiens', 'United Church of Canada':'chretiens', 'Christian Reformed':'chretiens', 'Salvation Army':'chretiens', 'Mennonite':'chretiens déviré', 'Other (please specify)':'other',"Don't know/ Prefer not to answer":'other'})
-#print(df['cps19_religion'])
-#df['row_num'] = df.reset_index().index
-
-
-#Genre rien à faire
 
 ''' Clustering des attributs ordonnables '''
 
@@ -140,10 +118,9 @@ df[label_cols] = df[label_cols].fillna('')
 df['label'] = df['cps19_votechoice'] + df['cps19_votechoice_pr'] + df['cps19_vote_unlikely'] + df['cps19_vote_unlike_pr'] + df['cps19_v_advance']
 
 
-''' Sélection des attributs '''
+''' Attributes selection and enconding '''
 
-attributes = [
-    'classeAge',
+attributes_to_encode = [
     'cps19_gender',
     'cps19_education',
     'cps19_employment',
@@ -162,36 +139,25 @@ attributes = [
     'cps19_marital', # bof
     'cps19_union', # bof
     'cps19_sexuality', # bof
-    'cps19_demsat', # bof
+    'cps19_demsat',
+]
+
+attributes_not_to_encode = [
+    'classeAge',
     'cps19_pos',
     'label'
 ] + lead_strong_atts + lead_int_atts + lead_trust_atts
 
-df = df[attributes]
+''' Encoding function (needs a list) '''
+def labelEncoder(list_att):
+    for att in list_att:
+        le.fit(df[att].unique())
+        df[att] = le.transform(df[att])
 
-for attr in [
-    'cps19_gender',
-    'cps19_employment',
-    'cps19_religion',
-    'cps19_prov_id',
-    'cps19_vote_2015',
-    'cps19_fed_id',
-    'cps19_spend_educ',
-    'cps19_spend_env',
-    'cps19_spend_just_law',
-    'cps19_spend_defence',
-    'cps19_spend_imm_min',
-    'cps19_province', # bof
-    'cps19_bornin_canada', # bof
-    'cps19_children', # bof
-    'cps19_marital', # bof
-    'cps19_union', # bof
-    'cps19_sexuality', # bof
-    'cps19_demsat',
-]:
-    le = preprocessing.LabelEncoder()
-    le.fit(df[attr].unique())
-    df[attr] = le.transform(df[attr])
+labelEncoder(attributes_to_encode)
+
+
+df = df[attributes_to_encode + attributes_not_to_encode]
 
 
 ''' Séparation du dataset de test '''
@@ -288,4 +254,12 @@ df_sortie.to_csv('prediction.txt', index=False, sep="\t", header=False)'''
 
 # Arbre de décision (Random Forest)
 # K plus proches voisins
+
+## Java's garbage collector 
+# Education : Numérisation/Ordonnement
+#edu = np.array(df['cps19_education'])
+#edu_mean = int(np.mean(edu[edu > -1]))
+#df['cps19_education'] = df['cps19_education'].replace({'No schooling':0, 'Some elementary school':1, 'Completed elementary school':2,'Some secondary/ high school': 3, 'Completed secondary/ high school': 4, 'Some technical, community college, CEGEP, College Classique': 5, 'Completed technical, community college, CEGEP, College Classique': 6, 'Some university': 7, "Bachelor's degree": 8, "Master's degree":9, 'Professional degree or doctorate': 10, "Don't know/ Prefer not to answer": edu_mean})
+
+
 
