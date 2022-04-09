@@ -4,7 +4,7 @@ from sklearn import preprocessing
 from sklearn.model_selection import KFold
 from sklearn.naive_bayes import CategoricalNB, MultinomialNB
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score, balanced_accuracy_score
 from sklearn.cluster import Birch, KMeans
 from scipy import stats
 
@@ -12,6 +12,7 @@ from scipy import stats
 
 df = pd.read_csv('CES19.csv')
 testIndexes = pd.read_csv('exemple.txt', sep='\t', header=None)
+
 
 
 ''' Pipeline de prétraitrement '''
@@ -179,13 +180,35 @@ exit(0)
 
 ''' Entrainement '''
 
-def metrics(y_test,y_test_pred):
+def printMetrics(y_test,y_test_pred):
     print("Matrice de confusion :\n", confusion_matrix(y_test, y_test_pred))
     print("Exactitude :", accuracy_score(y_test, y_test_pred))
     print("Précision :", precision_score(y_test, y_test_pred, average='macro'))
     print("Rappel :", recall_score(y_test, y_test_pred, average='macro'))
     print("F1-score :", f1_score(y_test, y_test_pred, average='macro'))
     print("Exactitude équilibrée :", balanced_accuracy_score(y_test, y_test_pred))
+
+def printFinalMetricsNB():
+    print('--CategorialNB-- ')
+    print('min accuracy : ' + str(min(lst_catNB_accuracy)))
+    print('max accuracy : ' + str(max(lst_catNB_accuracy)))
+    print('mean accuracy : ' + str(sum(lst_catNB_accuracy) / len(lst_catNB_accuracy)))
+    print('\n')
+    print('min balanced accuracy : ' + str(min(lst_catNB_balanced_accuracy)))
+    print('max balanced accuracy : ' + str(max(lst_catNB_balanced_accuracy)))
+    print('mean balanced accuracy : ' + str(sum(lst_catNB_balanced_accuracy) / len(lst_catNB_balanced_accuracy)))
+
+def printFinalMetricsRF():
+    print("--RandomForestClassifier--")
+    print('min accuracy : ' + str(min(lst_rf_accuracy)))
+    print('max accuracy : ' + str(max(lst_rf_accurancy)))
+    print('mean accuracy : ' + str(sum(lst_rf_accurancy) / len(lst_rf_accurancy)))
+    print('\n')
+    print('min balancedaccuracy : ' + str(min(lst_rf_balanced_accuracy)))
+    print('max balanced accuracy : ' + str(max(lst_rf_balanced_accurancy)))
+    print('mean balanced accuracy : ' + str(sum(lst_rf_balanced_accurancy) / len(lst_rf_balanced_accurancy)))
+    
+
     
 
 catNB = CategoricalNB()
@@ -193,12 +216,56 @@ multNB = MultinomialNB()
 rf = RandomForestClassifier()
 
 lst_catNB_accuracy=[]
-lst_multNB_accuracy=[]
+lst_catNB_balanced_accuracy = []
 lst_rf_accurancy=[]
+lst_rf_balanced_accuracy[]
 
 index_partition=0
 
+
 # Utilisation de "k-fold cross validation"
+def train_catNB(list_att, y_att):
+    catNB = CategoricalNB()
+    dfTrain = df[list_att+y_att]
+    dfTrain = dfTrain[~dfTrain[y_att].isna()]
+    
+    kf = KFold(n_splits=10)
+    for train_index, test_index in kf.split(dfTrain):
+        print("TRAIN:", train_index, "TEST:", test_index)
+        X_train = dfTrain.iloc[train_index].loc[:, dfTrain.columns != y_att]
+        y_train = dfTrain.iloc[train_index][y_att]
+        X_test = dfTrain.iloc[test_index].loc[:, dfTrain.columns != y_att]
+        y_test = dfTrain.iloc[test_index][y_att]
+        
+        catNB.fit(X_train, y_train)
+        y_test_pred = catNB.predict(X_test)
+        lst_catNB_accurancy.append(accuracy_score(y_test, y_test_pred))
+        lst_catNB_balanced_accuracy.append(balanced_accuracy_score(y_test, y_test_pred))
+        metrics(y_test, y_test_pred)
+        
+    printFinalMetricsNB()
+        
+def train_RF(list_att, y_att):
+    rf = RandomForestClassifier()
+    dfTrain = df[list_att+y_att]
+    dfTrain = dfTrain[~dfTrain[y_att].isna()]
+    
+    kf = KFold(n_splits=10)
+    for train_index, test_index in kf.split(dfTrain):
+        print("TRAIN:", train_index, "TEST:", test_index)
+        X_train = dfTrain.iloc[train_index].loc[:, dfTrain.columns != y_att]
+        y_train = dfTrain.iloc[train_index][y_att]
+        X_test = dfTrain.iloc[test_index].loc[:, dfTrain.columns != y_att]
+        y_test = dfTrain.iloc[test_index][y_att]
+        
+        rf.fit(X_train, y_train)
+        y_test_pred = rf.predict(X_test)
+        lst_rf_accurancy.append(accuracy_score(y_test, y_test_pred))
+        lst_rf_balanced_accuracy.append(balanced_accuracy_score(y_test, y_test_pred))
+        metrics(y_test,y_test_pred)
+     
+    printFinalMetricsRF()
+    
 kf = KFold(n_splits=10)
 for train_index, test_index in kf.split(dfTrain):
     print("TRAIN:", train_index, "TEST:", test_index)
@@ -234,12 +301,7 @@ for train_index, test_index in kf.split(dfTrain):
     # https://medium.com/@kenzaharifi/bien-comprendre-lalgorithme-des-k-plus-proches-voisins-fonctionnement-et-impl%C3%A9mentation-sur-r-et-a66d2d372679
     index_partition=index_partition+1
 
-print('--CategorialNB-- ')
-print('max exactitude : ' + str(max(lst_catNB_accuracy)))
-print('mean exactitude : ' + str(sum(lst_catNB_accuracy) / len(lst_catNB_accuracy)))
-print("--RandomForestClassifier--")
-print('max exactitude : ' + str(max(lst_rf_accurancy)))
-print('mean exactitude : ' + str(sum(lst_rf_accurancy) / len(lst_rf_accurancy)))
+
 
 ''' Test de l'algorithme '''
 
