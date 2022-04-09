@@ -74,6 +74,18 @@ df.dropna(subset=['cps19_prov_id'], inplace=True)
 df.dropna(subset=['cps19_vote_2015'], inplace=True)
 
 
+''' Fusionner les étiquettes pour avoir une seule colonne label df['label']'''
+
+label_cols = [
+    'cps19_votechoice',
+    'cps19_votechoice_pr',
+    'cps19_vote_unlikely',
+    'cps19_vote_unlike_pr',
+    'cps19_v_advance',
+]
+df[label_cols] = df[label_cols].fillna('')
+df['label'] = df['cps19_votechoice'] + df['cps19_votechoice_pr'] + df['cps19_vote_unlikely'] + df['cps19_vote_unlike_pr'] + df['cps19_v_advance']
+
 ''' Clustering des attributs ordonnables '''
 
 conversion_attributes = {
@@ -103,19 +115,6 @@ print(df['cps19_pos_cannabis'].unique())
 brc = Birch(n_clusters=8)
 brc.fit(df[to_cluster])
 df['cps19_pos'] = brc.predict(df[to_cluster])
-
-
-''' Fusionner les étiquettes pour avoir une seule colonne label df['label']'''
-
-label_cols = [
-    'cps19_votechoice',
-    'cps19_votechoice_pr',
-    'cps19_vote_unlikely',
-    'cps19_vote_unlike_pr',
-    'cps19_v_advance',
-]
-df[label_cols] = df[label_cols].fillna('')
-df['label'] = df['cps19_votechoice'] + df['cps19_votechoice_pr'] + df['cps19_vote_unlikely'] + df['cps19_vote_unlike_pr'] + df['cps19_v_advance']
 
 
 ''' Attributes selection and enconding '''
@@ -149,6 +148,8 @@ attributes_not_to_encode = [
 ] + lead_strong_atts + lead_int_atts + lead_trust_atts
 
 ''' Encoding function (needs a list) '''
+le = preprocessing.LabelEncoder()
+
 def labelEncoder(list_att):
     for att in list_att:
         le.fit(df[att].unique())
@@ -178,12 +179,13 @@ exit(0)
 
 ''' Entrainement '''
 
-def detailPrint(y_test,y_test_pred):
+def metrics(y_test,y_test_pred):
     print("Matrice de confusion :\n", confusion_matrix(y_test, y_test_pred))
     print("Exactitude :", accuracy_score(y_test, y_test_pred))
     print("Précision :", precision_score(y_test, y_test_pred, average='macro'))
     print("Rappel :", recall_score(y_test, y_test_pred, average='macro'))
     print("F1-score :", f1_score(y_test, y_test_pred, average='macro'))
+    print("Exactitude équilibrée :", balanced_accuracy_score(y_test, y_test_pred))
     
 
 catNB = CategoricalNB()
@@ -213,14 +215,14 @@ for train_index, test_index in kf.split(dfTrain):
     catNB.fit(X_train, y_train)
     y_test_pred = catNB.predict(X_test)
     lst_catNB_accuracy.append(accuracy_score(y_test, y_test_pred))
-    detailPrint(y_test,y_test_pred)
+    metrics(y_test,y_test_pred)
    
     # RandomForestClassifier
     print("RandomForestClassifier")
     rf.fit(X_train, y_train)
     y_test_pred = rf.predict(X_test)
     lst_rf_accurancy.append(accuracy_score(y_test, y_test_pred))
-    detailPrint(y_test,y_test_pred)
+    metrics(y_test,y_test_pred)
     
     # Classificateur naïf de bayes
     # https://www.stat4decision.com/fr/foret-aleatoire-avec-python/
