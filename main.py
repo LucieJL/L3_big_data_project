@@ -6,6 +6,7 @@ from sklearn.naive_bayes import CategoricalNB
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score, balanced_accuracy_score
 from sklearn.cluster import Birch, KMeans
+from point_h import *
 
 ''' Paramétrage '''
 
@@ -72,8 +73,45 @@ df[lead_trust_atts] = df[lead_trust_atts].isna().astype(int)
 df[lead_int_atts] = df[lead_int_atts].isna().astype(int)
 df[lead_strong_atts] = df[lead_strong_atts].isna().astype(int)
 
-df.dropna(subset=['cps19_prov_id'], inplace=True)
-df.dropna(subset=['cps19_vote_2015'], inplace=True)
+# Définition des attributs à encoder
+attributes_to_encode = [
+    'cps19_gender',
+    'cps19_education',
+    'cps19_employment',
+    'cps19_religion',
+    #'cps19_prov_id',
+    #'cps19_vote_2015',
+    'cps19_fed_id',
+    'cps19_spend_educ',
+    'cps19_spend_env',
+    'cps19_spend_just_law',
+    'cps19_spend_defence',
+    'cps19_spend_imm_min',
+    'cps19_province', # bof
+    'cps19_bornin_canada', # bof
+    'cps19_children', # bof
+    'cps19_marital', # bof
+    'cps19_union', # bof
+    'cps19_sexuality', # bof
+    'cps19_demsat',
+]
+
+labelEncoder(df, attributes_to_encode)
+
+predictAttributeNaiveBayes(df, [
+    'cps19_age', 'cps19_employment', 'cps19_religion', 'cps19_fed_id'
+] + lead_strong_atts + lead_trust_atts + lead_int_atts, 'cps19_prov_id')
+
+labelEncoder(df, ['cps19_prov_id'])
+
+
+predictAttributeNaiveBayes(df, [
+    'cps19_age', 'cps19_employment', 'cps19_religion', 'cps19_fed_id', 'cps19_prov_id'
+] + lead_strong_atts + lead_trust_atts + lead_int_atts, 'cps19_vote_2015')
+
+labelEncoder(df, ['cps19_vote_2015'])
+
+attributes_to_encode.extend(['cps19_prov_id', 'cps19_vote_2015'])
 
 
 ''' Fusionner les étiquettes pour avoir une seule colonne label df['label']'''
@@ -120,7 +158,7 @@ df['cps19_pos'] = brc.predict(df[to_cluster])
 
 ''' Attributes selection and enconding '''
 
-attributes_to_encode = [
+'''attributes_to_encode = [
     'cps19_gender',
     'cps19_education',
     'cps19_employment',
@@ -140,7 +178,7 @@ attributes_to_encode = [
     'cps19_union', # bof
     'cps19_sexuality', # bof
     'cps19_demsat',
-]
+]'''
 
 attributes_not_to_encode = [
     'row_num',
@@ -148,17 +186,6 @@ attributes_not_to_encode = [
     'cps19_pos',
     'label'
 ] + lead_strong_atts + lead_int_atts + lead_trust_atts
-
-''' Encoding function (needs a list) '''
-le = preprocessing.LabelEncoder()
-
-def labelEncoder(list_att):
-    for att in list_att:
-        le.fit(df[att].unique())
-        df[att] = le.transform(df[att])
-
-labelEncoder(attributes_to_encode)
-
 
 df = df[attributes_to_encode + attributes_not_to_encode]
 
@@ -174,24 +201,20 @@ dfTrain = dfTrain[dfTrain['label'] != '']
 
 ''' Entrainement '''
 
-def metrics(y_test,y_test_pred):
-    print("Matrice de confusion :\n", confusion_matrix(y_test, y_test_pred))
-    print("Exactitude :", accuracy_score(y_test, y_test_pred))
-    print("Précision :", precision_score(y_test, y_test_pred, average='macro'))
-    print("Rappel :", recall_score(y_test, y_test_pred, average='macro'))
-    print("F1-score :", f1_score(y_test, y_test_pred, average='macro'))
-    print("Exactitude équilibrée :", balanced_accuracy_score(y_test, y_test_pred))
-
-
 nb_classifiers = []
 rf_classifiers = []
 
 nb_accuracies = []
+nb_balanced_accuracies = []
 rf_accuracies = []
+rf_balanced_accuracies = []
 
 index_partition = 0
 
+
 # Utilisation de "k-fold cross validation"
+
+    
 kf = KFold(n_splits=10)
 for train_index, test_index in kf.split(dfTrain):
     print("TRAIN:", train_index, "TEST:", test_index)
@@ -208,7 +231,8 @@ for train_index, test_index in kf.split(dfTrain):
     nb.fit(X_train, y_train)
     y_test_pred = nb.predict(X_test)
     nb_accuracies.append(accuracy_score(y_test, y_test_pred))
-    metrics(y_test, y_test_pred)
+    nb_balanced_accuracies.append(balanced_accuracy_score(y_test, y_test_pred))
+    printMetrics(y_test, y_test_pred)
    
     # RandomForestClassifier
     print("RandomForestClassifier")
@@ -217,16 +241,16 @@ for train_index, test_index in kf.split(dfTrain):
     rf.fit(X_train, y_train)
     y_test_pred = rf.predict(X_test)
     rf_accuracies.append(accuracy_score(y_test, y_test_pred))
-    metrics(y_test, y_test_pred)
+    rf_balanced_accuracies.append(balanced_accuracy_score(y_test, y_test_pred))
+    printMetrics(y_test, y_test_pred)
 
     index_partition += 1
 
-print('--CategorialNB-- ')
-print('max exactitude : ' + str(max(nb_accuracies)))
-print('mean exactitude : ' + str(sum(nb_accuracies) / len(nb_accuracies)))
-print("--RandomForestClassifier--")
-print('max exactitude : ' + str(max(rf_accuracies)))
-print('mean exactitude : ' + str(sum(rf_accuracies) / len(rf_accuracies)))
+print('\nCategorialNB')
+printFinalMetrics(nb_accuracies, nb_accuracies)
+print("\nRandomForestClassifier")
+printFinalMetrics(rf_accuracies, rf_accuracies)
+
 
 ''' Prédiction du dataset de test '''
 

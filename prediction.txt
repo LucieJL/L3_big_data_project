@@ -1,10 +1,15 @@
+7	Liberal Party
 22	Liberal Party
+45	Liberal Party
 59	Liberal Party
 63	ndp
-77	Don't know/ Prefer not to answer
+77	ndp
 91	Liberal Party
+93	Conservative Party
+132	Conservative Party
 139	Liberal Party
 145	Green Party
+164	Conservative Party
 168	Liberal Party
 170	Liberal Party
 175	Conservative Party
@@ -14,50 +19,57 @@
 214	Liberal Party
 219	Conservative Party
 222	Liberal Party
-230	ndp
-233	Conservative Party
+230	Don't know/ Prefer not to answer
+233	Another party (please specify)
 235	Liberal Party
 246	Conservative Party
 260	Conservative Party
 266	Bloc Qu<e9>b<e9>cois
 284	Don't know/ Prefer not to answer
 290	ndp
-298	Conservative Party
+298	Don't know/ Prefer not to answer
 301	Liberal Party
 308	Liberal Party
 328	Don't know/ Prefer not to answer
 329	Conservative Party
+338	Conservative Party
 346	Liberal Party
-354	Conservative Party
+354	Don't know/ Prefer not to answer
 356	Liberal Party
-361	ndp
+361	Don't know/ Prefer not to answer
 365	Bloc Qu<e9>b<e9>cois
 369	Conservative Party
 394	ndp
 395	Liberal Party
 412	Green Party
 430	ndp
+446	Liberal Party
 466	Conservative Party
 484	Liberal Party
-498	Conservative Party
+498	Don't know/ Prefer not to answer
 509	Don't know/ Prefer not to answer
 525	Liberal Party
-526	Liberal Party
+526	ndp
 533	Don't know/ Prefer not to answer
 546	Don't know/ Prefer not to answer
 555	Liberal Party
 556	Conservative Party
-568	Bloc Qu<e9>b<e9>cois
+568	Don't know/ Prefer not to answer
 578	Conservative Party
+585	Conservative Party
+601	Liberal Party
 618	Liberal Party
 630	People's Party
-634	Don't know/ Prefer not to answer
+634	Liberal Party
 635	Liberal Party
+642	ndp
 643	Conservative Party
+667	Conservative Party
 675	Liberal Party
 685	Liberal Party
 694	Conservative Party
 713	ndp
+721	Bloc Qu<e9>b<e9>cois
 724	Liberal Party
 742	ndp
 744	Conservative Party
@@ -67,7 +79,7 @@
 782	Conservative Party
 783	Bloc Qu<e9>b<e9>cois
 785	Don't know/ Prefer not to answer
-789	Don't know/ Prefer not to answer
+789	Green Party
 793	Bloc Qu<e9>b<e9>cois
 801	Liberal Party
 804	Conservative Party
@@ -75,16 +87,22 @@
 821	Conservative Party
 833	Conservative Party
 849	Liberal Party
+850	Don't know/ Prefer not to answer
 873	Liberal Party
+885	Conservative Party
 902	Conservative Party
-913	Don't know/ Prefer not to answer
+913	Conservative Party
 919	Liberal Party
 927	Liberal Party
 929	Liberal Party
 932	Don't know/ Prefer not to answer
-957	Conservative Party
+943	Liberal Party
+949	Bloc Qu<e9>b<e9>cois
+957	Bloc Qu<e9>b<e9>cois
 988	Liberal Party
+1003	Liberal Party
 1004	Liberal Party
+1010	Liberal Party
 1012	Liberal Party
 1019	People's Party
 1023	Bloc Qu<e9>b<e9>cois
@@ -97,12 +115,15 @@
 1092	Liberal Party
 1106	Liberal Party
 1108	Liberal Party
+1126	Conservative Party
 1144	Conservative Party
 1155	Liberal Party
 1163	Liberal Party
 1169	Liberal Party
 1170	ndp
 1194	Don't know/ Prefer not to answer
+1197	Conservative Party
+1199	Liberal Party
 1211	Liberal Party
 1219	Don't know/ Prefer not to answer
 1229	People's Party
@@ -115,10 +136,13 @@
 1310	Don't know/ Prefer not to answer
 1316	Liberal Party
 1331	Don't know/ Prefer not to answer
+1333	ndp
 1336	Liberal Party
 1355	Conservative Party
 1364	Conservative Party
-1398	Don't know/ Prefer not to answer
+1372	Conservative Party
+1378	Green Party
+1398	Conservative Party
 1403	Conservative Party
 1413	Conservative Party
 1431	Don't know/ Prefer not to answer
@@ -129,7 +153,7 @@
 1500	Green Party
 1502	Conservative Party
 1506	Conservative Party
-1513	Conservative Party
+1513	Don't know/ Prefer not to answer
 1514	Bloc Qu<e9>b<e9>cois
 1535	Don't know/ Prefer not to answer
 1539	Conservative Party
@@ -147,7 +171,7 @@
 1695	Liberal Party
 1714	Liberal Party
 1731	Conservative Party
-1737	Don't know/ Prefer not to answer
+1737	Liberal Party
 1745	Liberal Party
 1746	Liberal Party
 1756	Conservative Party
@@ -159,10 +183,12 @@
 1810	Liberal Party
 1823	Liberal Party
 1826	Bloc Qu<e9>b<e9>cois
+1833	Liberal Party
 1848	Liberal Party
 1850	Conservative Party
 1854	Bloc Qu<e9>b<e9>cois
 1855	Conservative Party
+1888	ndp
 1894	Conservative Party
 1898	ndp
 1900	Conservative Party
@@ -170,10 +196,11 @@
 1912	Conservative Party
 1914	Conservative Party
 1934	Don't know/ Prefer not to answer
+1939	Conservative Party
 1944	Conservative Party
 1946	Green Party
 1954	Conservative Party
-1969	Liberal Party
+1969	Conservative Party
 1970	Conservative Party
 1980	Conservative Party
 1981	Liberal Party
@@ -189,18 +216,20 @@
 2138	Conservative Party
 2139	Liberal Party
 2166	Liberal Party
-2171	Conservative Party
+2171	Don't know/ Prefer not to answer
 2175	ndp
 2178	Liberal Party
 2180	Liberal Party
 2184	Conservative Party
 2190	Conservative Party
+2194	Liberal Party
 2221	Don't know/ Prefer not to answer
 2228	Liberal Party
 2230	Conservative Party
 2237	ndp
 2245	Conservative Party
 2263	Liberal Party
+2280	Liberal Party
 2281	Liberal Party
 2300	Bloc Qu<e9>b<e9>cois
 2305	Liberal Party
@@ -210,11 +239,13 @@
 2338	Conservative Party
 2341	Conservative Party
 2349	Liberal Party
+2358	Don't know/ Prefer not to answer
 2369	ndp
 2374	Don't know/ Prefer not to answer
 2392	Conservative Party
 2399	Don't know/ Prefer not to answer
 2411	Conservative Party
+2421	Don't know/ Prefer not to answer
 2427	Conservative Party
 2431	Liberal Party
 2454	Liberal Party
@@ -223,26 +254,34 @@
 2460	ndp
 2465	Conservative Party
 2474	Conservative Party
+2477	Liberal Party
 2478	Conservative Party
 2491	Conservative Party
 2524	Liberal Party
 2532	Don't know/ Prefer not to answer
 2553	Conservative Party
 2557	Liberal Party
+2571	Conservative Party
 2572	ndp
 2580	Liberal Party
 2588	Liberal Party
 2594	Conservative Party
 2617	Liberal Party
 2636	Green Party
+2643	ndp
 2658	Liberal Party
 2672	Liberal Party
+2677	Liberal Party
 2681	Conservative Party
-2690	Don't know/ Prefer not to answer
+2687	Don't know/ Prefer not to answer
+2690	Liberal Party
+2697	Conservative Party
 2704	ndp
 2706	Don't know/ Prefer not to answer
+2711	ndp
 2737	Liberal Party
 2747	ndp
+2749	Conservative Party
 2752	Conservative Party
 2805	Conservative Party
 2808	Liberal Party
@@ -253,7 +292,7 @@
 2869	Liberal Party
 2881	Conservative Party
 2898	Liberal Party
-2911	Liberal Party
+2911	Conservative Party
 2918	Green Party
 2931	Liberal Party
 2933	Conservative Party
@@ -264,7 +303,9 @@
 3009	Liberal Party
 3022	Conservative Party
 3038	Conservative Party
+3041	Liberal Party
 3044	Conservative Party
+3057	Liberal Party
 3062	Liberal Party
 3065	Conservative Party
 3078	Green Party
@@ -277,17 +318,21 @@
 3141	Conservative Party
 3147	Liberal Party
 3153	Conservative Party
-3155	ndp
-3165	Conservative Party
-3174	Liberal Party
+3155	Don't know/ Prefer not to answer
+3165	Green Party
+3174	Conservative Party
 3179	Liberal Party
+3186	Liberal Party
 3190	Don't know/ Prefer not to answer
 3191	ndp
+3215	Don't know/ Prefer not to answer
+3222	Conservative Party
 3236	Conservative Party
 3263	Conservative Party
 3264	Bloc Qu<e9>b<e9>cois
 3304	Liberal Party
 3349	Don't know/ Prefer not to answer
+3381	Conservative Party
 3383	Liberal Party
 3391	ndp
 3395	ndp
@@ -295,36 +340,42 @@
 3404	Liberal Party
 3411	Don't know/ Prefer not to answer
 3412	ndp
-3442	Don't know/ Prefer not to answer
-3456	Green Party
+3442	Green Party
+3456	Liberal Party
 3458	Conservative Party
 3460	Liberal Party
+3494	Don't know/ Prefer not to answer
 3502	Liberal Party
-3542	Liberal Party
+3542	Don't know/ Prefer not to answer
+3550	ndp
 3551	Liberal Party
 3554	Conservative Party
 3557	Liberal Party
 3583	Liberal Party
 3585	Liberal Party
 3596	Liberal Party
+3600	Conservative Party
 3609	Liberal Party
 3617	ndp
-3645	Liberal Party
+3635	Liberal Party
+3645	Green Party
 3650	Liberal Party
 3660	Liberal Party
 3679	Liberal Party
 3693	Conservative Party
 3705	Conservative Party
+3721	Green Party
 3727	Don't know/ Prefer not to answer
 3739	Conservative Party
 3741	Don't know/ Prefer not to answer
+3742	Liberal Party
 3748	Liberal Party
 3752	Bloc Qu<e9>b<e9>cois
 3772	Conservative Party
 3780	Conservative Party
 3784	Liberal Party
 3794	Conservative Party
-3799	ndp
+3799	Green Party
 3837	Bloc Qu<e9>b<e9>cois
 3847	Liberal Party
 3851	Liberal Party
@@ -333,6 +384,7 @@
 3887	Conservative Party
 3896	Liberal Party
 3903	Liberal Party
+3907	ndp
 3916	Green Party
 3919	Don't know/ Prefer not to answer
 3929	Liberal Party
@@ -340,6 +392,7 @@
 3938	Liberal Party
 3939	Conservative Party
 3950	Conservative Party
+3964	Liberal Party
 3966	Conservative Party
 3971	Conservative Party
 3978	ndp
@@ -347,7 +400,7 @@
 3998	Conservative Party
 4012	Don't know/ Prefer not to answer
 4038	Liberal Party
-4086	Don't know/ Prefer not to answer
+4086	Liberal Party
 4099	Conservative Party
 4100	Green Party
 4107	Conservative Party
@@ -356,8 +409,10 @@
 4121	Liberal Party
 4138	Liberal Party
 4157	ndp
+4163	Green Party
 4186	Conservative Party
 4188	Don't know/ Prefer not to answer
+4204	Don't know/ Prefer not to answer
 4252	Conservative Party
 4272	Green Party
 4282	Don't know/ Prefer not to answer
@@ -368,8 +423,9 @@
 4335	Conservative Party
 4374	Liberal Party
 4408	Liberal Party
-4416	Liberal Party
-4445	Bloc Qu<e9>b<e9>cois
+4416	ndp
+4439	Don't know/ Prefer not to answer
+4445	Liberal Party
 4462	Liberal Party
 4468	Don't know/ Prefer not to answer
 4488	Liberal Party
@@ -381,12 +437,14 @@
 4545	Conservative Party
 4557	Liberal Party
 4558	ndp
+4559	Conservative Party
 4560	Conservative Party
 4563	Conservative Party
 4592	Conservative Party
-4596	Don't know/ Prefer not to answer
+4596	Conservative Party
 4597	Liberal Party
 4609	Don't know/ Prefer not to answer
+4618	Liberal Party
 4621	Liberal Party
 4627	Conservative Party
 4635	Liberal Party
@@ -394,23 +452,33 @@
 4667	Liberal Party
 4689	Conservative Party
 4702	Conservative Party
+4727	Conservative Party
+4731	Don't know/ Prefer not to answer
 4732	Conservative Party
 4758	Don't know/ Prefer not to answer
 4760	Conservative Party
+4768	Liberal Party
 4775	Conservative Party
+4793	Don't know/ Prefer not to answer
 4795	ndp
 4834	Liberal Party
+4840	Liberal Party
 4843	ndp
 4859	Conservative Party
+4887	Liberal Party
+4893	ndp
 4894	Conservative Party
+4909	Don't know/ Prefer not to answer
 4910	ndp
 4914	ndp
 4917	Conservative Party
-4918	Liberal Party
+4918	Don't know/ Prefer not to answer
 4923	Liberal Party
+4924	Conservative Party
 4934	Conservative Party
 4939	ndp
 4968	Conservative Party
+4975	Liberal Party
 4987	Conservative Party
 4998	Liberal Party
 5001	Liberal Party
@@ -418,9 +486,11 @@
 5005	Liberal Party
 5006	Conservative Party
 5012	Bloc Qu<e9>b<e9>cois
+5019	ndp
 5029	Liberal Party
 5035	Conservative Party
 5037	Don't know/ Prefer not to answer
+5080	Green Party
 5102	ndp
 5107	ndp
 5130	Don't know/ Prefer not to answer
@@ -429,6 +499,7 @@
 5147	ndp
 5159	Conservative Party
 5160	Conservative Party
+5164	Conservative Party
 5174	Conservative Party
 5192	Liberal Party
 5193	Conservative Party
@@ -436,6 +507,7 @@
 5203	Conservative Party
 5211	ndp
 5215	Liberal Party
+5241	Don't know/ Prefer not to answer
 5250	Liberal Party
 5257	Conservative Party
 5261	Liberal Party
@@ -443,24 +515,28 @@
 5287	Liberal Party
 5308	Liberal Party
 5315	Don't know/ Prefer not to answer
+5329	Liberal Party
 5336	Don't know/ Prefer not to answer
 5345	ndp
 5347	Don't know/ Prefer not to answer
 5351	Conservative Party
 5360	Liberal Party
+5372	ndp
 5375	Don't know/ Prefer not to answer
 5389	Conservative Party
 5398	Liberal Party
+5403	Conservative Party
 5405	ndp
 5408	Conservative Party
 5421	Green Party
 5423	ndp
+5435	Liberal Party
 5453	Liberal Party
 5457	Conservative Party
 5472	Conservative Party
 5475	Liberal Party
 5481	Don't know/ Prefer not to answer
-5486	Don't know/ Prefer not to answer
+5486	Liberal Party
 5489	Conservative Party
 5494	Don't know/ Prefer not to answer
 5509	Liberal Party
@@ -469,9 +545,11 @@
 5535	Liberal Party
 5539	Don't know/ Prefer not to answer
 5552	ndp
+5565	Don't know/ Prefer not to answer
 5597	Don't know/ Prefer not to answer
 5610	People's Party
 5624	Liberal Party
+5629	Don't know/ Prefer not to answer
 5636	Conservative Party
 5639	Conservative Party
 5642	Liberal Party
@@ -496,18 +574,20 @@
 5837	Conservative Party
 5860	Conservative Party
 5864	Liberal Party
-5898	Don't know/ Prefer not to answer
+5898	ndp
 5913	Conservative Party
-5914	Don't know/ Prefer not to answer
+5914	Conservative Party
 5915	Liberal Party
 5917	Liberal Party
 5934	Conservative Party
 5945	Conservative Party
 5955	Conservative Party
 5961	Don't know/ Prefer not to answer
-5967	Conservative Party
+5967	Don't know/ Prefer not to answer
+5971	Conservative Party
 5975	ndp
 5983	Bloc Qu<e9>b<e9>cois
+5987	Liberal Party
 6001	Don't know/ Prefer not to answer
 6034	Liberal Party
 6035	Conservative Party
@@ -516,26 +596,32 @@
 6044	Bloc Qu<e9>b<e9>cois
 6045	Conservative Party
 6046	Conservative Party
+6065	Don't know/ Prefer not to answer
+6077	Green Party
 6078	ndp
 6080	Liberal Party
 6088	Liberal Party
 6104	Conservative Party
+6112	ndp
 6116	Liberal Party
 6142	Conservative Party
+6151	Liberal Party
 6161	Conservative Party
 6190	ndp
 6191	Liberal Party
 6228	Liberal Party
 6235	ndp
 6242	Liberal Party
-6253	ndp
+6253	Conservative Party
 6257	Liberal Party
 6265	ndp
 6268	Liberal Party
 6274	Liberal Party
+6309	Conservative Party
 6314	Liberal Party
 6336	Conservative Party
 6339	Conservative Party
+6389	Conservative Party
 6392	Liberal Party
 6400	Don't know/ Prefer not to answer
 6401	Conservative Party
@@ -544,26 +630,34 @@
 6442	Conservative Party
 6445	ndp
 6454	Conservative Party
+6468	Liberal Party
 6469	Don't know/ Prefer not to answer
-6472	ndp
+6472	Green Party
 6476	Don't know/ Prefer not to answer
 6487	Conservative Party
 6494	ndp
+6495	Conservative Party
 6501	Don't know/ Prefer not to answer
 6522	Liberal Party
+6528	Conservative Party
 6532	Liberal Party
 6535	ndp
 6555	Conservative Party
 6559	Green Party
 6575	ndp
+6587	Liberal Party
 6589	Don't know/ Prefer not to answer
 6598	ndp
+6612	ndp
+6627	Conservative Party
 6639	Conservative Party
 6644	Conservative Party
+6648	Liberal Party
 6649	Conservative Party
 6653	Liberal Party
 6710	Conservative Party
 6714	Liberal Party
+6733	Don't know/ Prefer not to answer
 6734	Don't know/ Prefer not to answer
 6745	Liberal Party
 6762	Don't know/ Prefer not to answer
@@ -587,21 +681,27 @@
 6944	Conservative Party
 6983	Liberal Party
 6995	Bloc Qu<e9>b<e9>cois
-7003	Don't know/ Prefer not to answer
+7003	Liberal Party
 7005	ndp
 7007	Don't know/ Prefer not to answer
 7017	Bloc Qu<e9>b<e9>cois
 7026	Liberal Party
+7032	Liberal Party
 7057	Liberal Party
 7063	Don't know/ Prefer not to answer
 7067	Conservative Party
+7080	Don't know/ Prefer not to answer
+7081	Green Party
 7119	Liberal Party
 7129	ndp
 7160	Conservative Party
 7184	ndp
 7193	ndp
 7199	Conservative Party
+7200	Don't know/ Prefer not to answer
+7243	Liberal Party
 7253	Liberal Party
+7271	Liberal Party
 7290	Liberal Party
 7322	Liberal Party
 7329	Liberal Party
@@ -617,34 +717,46 @@
 7450	Green Party
 7451	ndp
 7453	Conservative Party
+7460	ndp
 7462	Liberal Party
 7467	Green Party
 7471	Green Party
 7483	Conservative Party
+7485	Don't know/ Prefer not to answer
 7489	Green Party
 7495	Don't know/ Prefer not to answer
 7504	Conservative Party
 7505	Don't know/ Prefer not to answer
-7507	Liberal Party
+7507	ndp
 7511	ndp
 7530	Don't know/ Prefer not to answer
 7540	ndp
+7544	Liberal Party
+7547	Don't know/ Prefer not to answer
 7562	ndp
+7563	Liberal Party
 7566	ndp
+7570	Liberal Party
 7578	Liberal Party
 7593	Don't know/ Prefer not to answer
 7594	Conservative Party
+7598	Liberal Party
+7602	ndp
+7606	Green Party
 7611	ndp
 7618	Conservative Party
+7620	Don't know/ Prefer not to answer
 7623	Liberal Party
 7631	Conservative Party
 7633	Liberal Party
 7636	ndp
+7643	Conservative Party
 7697	Liberal Party
 7708	Conservative Party
 7721	Liberal Party
 7733	Liberal Party
 7734	Don't know/ Prefer not to answer
+7737	Don't know/ Prefer not to answer
 7749	Liberal Party
 7759	ndp
 7765	ndp
@@ -657,14 +769,21 @@
 7801	ndp
 7806	Liberal Party
 7837	Liberal Party
+7838	Don't know/ Prefer not to answer
+7842	Liberal Party
 7861	Liberal Party
 7873	Liberal Party
 7876	Conservative Party
 7883	Conservative Party
 7894	Conservative Party
 7914	ndp
+7928	Conservative Party
+7929	Conservative Party
+7936	Liberal Party
 7969	ndp
 7970	Don't know/ Prefer not to answer
+7984	ndp
+7992	Conservative Party
 7997	ndp
 7999	Conservative Party
 8014	Conservative Party
@@ -675,31 +794,36 @@
 8079	Liberal Party
 8080	Liberal Party
 8092	ndp
+8096	Conservative Party
 8103	Conservative Party
+8108	Don't know/ Prefer not to answer
 8118	Conservative Party
 8130	Bloc Qu<e9>b<e9>cois
 8138	Don't know/ Prefer not to answer
+8154	Don't know/ Prefer not to answer
 8156	Don't know/ Prefer not to answer
 8174	ndp
 8187	ndp
 8203	Liberal Party
 8206	Don't know/ Prefer not to answer
+8214	Liberal Party
 8230	Conservative Party
 8264	Green Party
 8274	Conservative Party
+8282	Conservative Party
 8290	Liberal Party
 8299	Conservative Party
 8320	Bloc Qu<e9>b<e9>cois
 8322	Conservative Party
 8326	Liberal Party
-8328	ndp
+8328	Liberal Party
 8331	Conservative Party
 8338	ndp
 8339	ndp
 8341	Don't know/ Prefer not to answer
 8343	Liberal Party
 8354	Conservative Party
-8374	Conservative Party
+8374	Liberal Party
 8390	Green Party
 8397	ndp
 8415	Conservative Party
@@ -709,27 +833,29 @@
 8451	Bloc Qu<e9>b<e9>cois
 8458	Conservative Party
 8462	Liberal Party
-8476	Green Party
+8476	Liberal Party
 8487	Liberal Party
 8499	Green Party
 8511	Conservative Party
 8517	Conservative Party
 8518	ndp
-8525	Conservative Party
+8525	Don't know/ Prefer not to answer
 8535	Conservative Party
 8539	Liberal Party
-8541	Green Party
+8541	Don't know/ Prefer not to answer
 8552	ndp
 8553	Conservative Party
+8559	Liberal Party
 8560	ndp
+8563	Liberal Party
 8585	Liberal Party
-8621	Conservative Party
+8621	Don't know/ Prefer not to answer
 8629	Don't know/ Prefer not to answer
 8646	Liberal Party
 8648	Green Party
 8650	Conservative Party
 8668	Liberal Party
-8674	People's Party
+8674	Conservative Party
 8675	Liberal Party
 8684	Conservative Party
 8693	Conservative Party
@@ -737,9 +863,11 @@
 8699	Conservative Party
 8723	Liberal Party
 8724	Conservative Party
+8728	Conservative Party
 8741	Don't know/ Prefer not to answer
 8754	Bloc Qu<e9>b<e9>cois
 8755	ndp
+8771	Conservative Party
 8780	Liberal Party
 8783	ndp
 8785	ndp
@@ -753,18 +881,23 @@
 8823	Don't know/ Prefer not to answer
 8839	Green Party
 8854	Liberal Party
+8856	Conservative Party
 8857	Conservative Party
 8860	Conservative Party
 8868	Don't know/ Prefer not to answer
 8870	Don't know/ Prefer not to answer
 8871	Liberal Party
 8875	Don't know/ Prefer not to answer
+8876	Conservative Party
+8897	Green Party
 8899	Conservative Party
 8901	Conservative Party
 8902	ndp
+8906	Liberal Party
 8943	Green Party
 8973	Liberal Party
 8977	Conservative Party
+8988	Don't know/ Prefer not to answer
 8998	ndp
 9003	Conservative Party
 9018	ndp
@@ -773,31 +906,41 @@
 9046	Conservative Party
 9054	ndp
 9071	Liberal Party
-9076	Don't know/ Prefer not to answer
+9076	Green Party
 9100	Liberal Party
 9111	Don't know/ Prefer not to answer
 9112	ndp
+9114	ndp
+9115	Conservative Party
 9126	ndp
 9137	ndp
-9152	Don't know/ Prefer not to answer
+9152	Conservative Party
 9153	Don't know/ Prefer not to answer
 9164	Liberal Party
+9173	Conservative Party
 9227	Conservative Party
+9229	Liberal Party
 9231	Liberal Party
+9232	Conservative Party
 9259	Liberal Party
 9275	ndp
+9279	Don't know/ Prefer not to answer
 9282	Bloc Qu<e9>b<e9>cois
 9294	Conservative Party
 9301	Conservative Party
 9325	Green Party
 9329	Liberal Party
+9332	Liberal Party
 9338	Green Party
 9340	Conservative Party
 9347	Liberal Party
 9349	Conservative Party
 9358	Liberal Party
 9363	Liberal Party
+9364	Conservative Party
 9368	Don't know/ Prefer not to answer
+9376	ndp
+9387	Conservative Party
 9407	Liberal Party
 9415	Conservative Party
 9429	ndp
@@ -810,6 +953,7 @@
 9462	Liberal Party
 9498	Conservative Party
 9500	Liberal Party
+9501	Don't know/ Prefer not to answer
 9521	ndp
 9528	Liberal Party
 9544	Conservative Party
@@ -831,66 +975,90 @@
 9719	Conservative Party
 9721	Green Party
 9725	Conservative Party
+9729	Conservative Party
 9732	Conservative Party
 9741	Liberal Party
 9749	Liberal Party
 9761	Conservative Party
-9769	Bloc Qu<e9>b<e9>cois
-9771	Liberal Party
+9769	Conservative Party
+9771	Don't know/ Prefer not to answer
 9780	Green Party
+9787	Conservative Party
 9803	Don't know/ Prefer not to answer
 9806	ndp
 9828	Conservative Party
+9840	Liberal Party
 9856	ndp
 9879	Conservative Party
 9880	Green Party
 9886	Conservative Party
+9888	Liberal Party
 9931	Liberal Party
 9946	Liberal Party
 9952	Conservative Party
 9963	Conservative Party
 9991	Don't know/ Prefer not to answer
 10010	Conservative Party
-10041	Don't know/ Prefer not to answer
+10023	Liberal Party
+10041	Conservative Party
+10043	Don't know/ Prefer not to answer
 10046	Liberal Party
+10047	Conservative Party
+10049	Bloc Qu<e9>b<e9>cois
 10054	ndp
 10058	Liberal Party
 10079	Conservative Party
 10089	People's Party
+10093	Liberal Party
 10106	Liberal Party
+10117	Conservative Party
 10124	Liberal Party
 10128	ndp
 10132	Bloc Qu<e9>b<e9>cois
 10152	Conservative Party
+10164	ndp
 10170	Liberal Party
 10195	Conservative Party
 10199	Liberal Party
 10201	Don't know/ Prefer not to answer
 10204	Green Party
+10205	ndp
 10222	Liberal Party
 10224	Liberal Party
-10227	ndp
+10227	Conservative Party
 10247	Green Party
 10260	ndp
+10276	Liberal Party
 10279	Liberal Party
 10291	Liberal Party
 10293	ndp
+10294	Liberal Party
 10319	Liberal Party
-10324	Liberal Party
+10324	Don't know/ Prefer not to answer
+10326	Conservative Party
+10345	Liberal Party
 10362	Conservative Party
 10378	Liberal Party
+10380	Liberal Party
+10389	Liberal Party
 10392	Green Party
+10411	ndp
+10416	Green Party
 10417	Conservative Party
 10421	Conservative Party
+10434	ndp
 10447	ndp
 10472	Liberal Party
+10494	Liberal Party
 10507	Liberal Party
 10508	Liberal Party
 10527	Liberal Party
+10531	Don't know/ Prefer not to answer
 10534	ndp
 10537	Conservative Party
 10550	Conservative Party
 10553	Conservative Party
+10558	Liberal Party
 10574	ndp
 10576	Conservative Party
 10579	Liberal Party
@@ -898,12 +1066,18 @@
 10615	Liberal Party
 10623	Liberal Party
 10626	Green Party
+10633	Liberal Party
 10637	Liberal Party
 10647	ndp
 10695	Liberal Party
 10700	Liberal Party
 10704	Conservative Party
+10712	Don't know/ Prefer not to answer
+10720	People's Party
+10721	Conservative Party
 10724	ndp
+10730	ndp
+10733	Don't know/ Prefer not to answer
 10734	Conservative Party
 10744	Liberal Party
 10748	Don't know/ Prefer not to answer
@@ -928,20 +1102,26 @@
 10929	Conservative Party
 10960	Liberal Party
 10973	Liberal Party
+10989	Liberal Party
 10990	Bloc Qu<e9>b<e9>cois
+10991	Liberal Party
 11049	Green Party
 11055	Don't know/ Prefer not to answer
 11073	Conservative Party
 11086	Conservative Party
 11093	Green Party
+11113	Don't know/ Prefer not to answer
 11116	Liberal Party
 11125	Conservative Party
 11127	Liberal Party
 11128	Conservative Party
 11131	Conservative Party
+11141	Conservative Party
+11143	Don't know/ Prefer not to answer
 11159	Conservative Party
 11182	Conservative Party
 11192	Liberal Party
+11194	Liberal Party
 11195	Liberal Party
 11202	Don't know/ Prefer not to answer
 11206	Don't know/ Prefer not to answer
@@ -950,7 +1130,7 @@
 11229	Liberal Party
 11235	Liberal Party
 11238	Liberal Party
-11240	Liberal Party
+11240	Conservative Party
 11246	Liberal Party
 11249	Conservative Party
 11272	Liberal Party
@@ -958,21 +1138,25 @@
 11294	Green Party
 11296	Liberal Party
 11315	Don't know/ Prefer not to answer
-11345	Liberal Party
+11345	Don't know/ Prefer not to answer
 11370	Conservative Party
 11378	Liberal Party
+11387	Conservative Party
 11392	Don't know/ Prefer not to answer
 11398	Conservative Party
+11403	Don't know/ Prefer not to answer
 11456	Liberal Party
 11459	Liberal Party
 11462	Liberal Party
 11470	Don't know/ Prefer not to answer
 11471	Conservative Party
+11489	Liberal Party
 11503	Liberal Party
 11536	ndp
+11549	Liberal Party
 11572	Conservative Party
 11614	Conservative Party
-11622	Liberal Party
+11622	ndp
 11625	Conservative Party
 11629	ndp
 11634	Liberal Party
@@ -982,7 +1166,7 @@
 11689	Liberal Party
 11724	Liberal Party
 11734	Liberal Party
-11739	ndp
+11739	Don't know/ Prefer not to answer
 11742	Liberal Party
 11752	Liberal Party
 11763	Liberal Party
@@ -990,33 +1174,49 @@
 11790	Conservative Party
 11791	ndp
 11793	Bloc Qu<e9>b<e9>cois
-11809	Liberal Party
+11809	Green Party
+11820	Don't know/ Prefer not to answer
 11824	Conservative Party
 11833	Conservative Party
+11841	Don't know/ Prefer not to answer
+11850	Liberal Party
 11866	Don't know/ Prefer not to answer
+11869	Liberal Party
 11872	Conservative Party
+11886	Don't know/ Prefer not to answer
+11892	Liberal Party
 11905	Conservative Party
 11908	Conservative Party
+11923	Don't know/ Prefer not to answer
 11932	Conservative Party
 11960	Liberal Party
+11964	Liberal Party
 11969	Liberal Party
 11971	Conservative Party
 11979	Liberal Party
+12010	ndp
+12013	Conservative Party
+12018	Liberal Party
 12065	Liberal Party
 12078	Don't know/ Prefer not to answer
+12106	Liberal Party
 12111	ndp
 12114	Don't know/ Prefer not to answer
 12123	Conservative Party
 12130	Don't know/ Prefer not to answer
-12144	ndp
+12144	Don't know/ Prefer not to answer
+12155	ndp
 12157	Liberal Party
 12161	Bloc Qu<e9>b<e9>cois
 12166	ndp
 12190	Liberal Party
+12192	Liberal Party
 12193	Liberal Party
 12203	Conservative Party
 12207	ndp
-12226	Liberal Party
+12208	Liberal Party
+12209	ndp
+12226	Don't know/ Prefer not to answer
 12253	Liberal Party
 12254	Conservative Party
 12262	Don't know/ Prefer not to answer
@@ -1026,6 +1226,7 @@
 12296	Conservative Party
 12299	Conservative Party
 12315	Conservative Party
+12318	Liberal Party
 12338	Liberal Party
 12347	ndp
 12357	Conservative Party
@@ -1033,6 +1234,8 @@
 12359	Bloc Qu<e9>b<e9>cois
 12365	Conservative Party
 12379	Liberal Party
+12395	Liberal Party
+12405	Liberal Party
 12408	Conservative Party
 12414	Conservative Party
 12425	Conservative Party
@@ -1040,13 +1243,17 @@
 12439	Conservative Party
 12456	Liberal Party
 12472	Conservative Party
-12484	Conservative Party
+12484	Don't know/ Prefer not to answer
+12511	Conservative Party
 12515	Liberal Party
-12516	Don't know/ Prefer not to answer
+12516	ndp
 12519	Don't know/ Prefer not to answer
+12522	Conservative Party
 12529	Liberal Party
+12531	Liberal Party
 12545	ndp
 12557	Liberal Party
+12559	ndp
 12560	Don't know/ Prefer not to answer
 12573	Conservative Party
 12593	Don't know/ Prefer not to answer
@@ -1057,19 +1264,23 @@
 12629	Liberal Party
 12634	Conservative Party
 12636	ndp
+12645	Bloc Qu<e9>b<e9>cois
 12680	ndp
 12691	Liberal Party
 12696	Conservative Party
 12712	Bloc Qu<e9>b<e9>cois
 12721	Conservative Party
 12724	Liberal Party
+12728	Green Party
 12737	Liberal Party
 12748	ndp
 12750	Don't know/ Prefer not to answer
-12772	ndp
+12772	Liberal Party
+12793	Liberal Party
 12799	Liberal Party
 12816	Conservative Party
 12822	Don't know/ Prefer not to answer
+12827	Conservative Party
 12837	Conservative Party
 12841	Liberal Party
 12846	ndp
@@ -1090,11 +1301,14 @@
 12999	ndp
 13002	ndp
 13003	Conservative Party
+13023	Don't know/ Prefer not to answer
 13025	Liberal Party
 13042	ndp
 13044	Conservative Party
 13046	Don't know/ Prefer not to answer
+13049	Don't know/ Prefer not to answer
 13054	Liberal Party
+13064	Conservative Party
 13066	Liberal Party
 13074	Conservative Party
 13076	Liberal Party
@@ -1108,53 +1322,65 @@
 13162	Liberal Party
 13167	Bloc Qu<e9>b<e9>cois
 13183	Don't know/ Prefer not to answer
+13187	Liberal Party
 13205	Bloc Qu<e9>b<e9>cois
 13206	Conservative Party
 13217	Conservative Party
-13226	Liberal Party
+13226	Green Party
 13227	ndp
 13228	Liberal Party
 13230	Liberal Party
 13231	ndp
-13290	Don't know/ Prefer not to answer
+13290	ndp
 13294	Liberal Party
 13295	ndp
 13298	Liberal Party
 13300	Liberal Party
 13302	ndp
+13324	ndp
 13355	Bloc Qu<e9>b<e9>cois
 13360	Liberal Party
 13361	ndp
 13368	Liberal Party
 13383	Conservative Party
+13392	Liberal Party
 13417	Don't know/ Prefer not to answer
+13421	Conservative Party
 13435	Bloc Qu<e9>b<e9>cois
 13436	ndp
 13452	Liberal Party
 13454	Conservative Party
+13520	Green Party
 13527	Don't know/ Prefer not to answer
+13535	ndp
 13545	ndp
 13574	ndp
 13584	Green Party
 13588	Liberal Party
 13595	Don't know/ Prefer not to answer
-13610	Liberal Party
+13610	Green Party
 13616	Liberal Party
+13620	ndp
 13623	Conservative Party
 13636	Liberal Party
 13648	Green Party
 13653	Liberal Party
+13678	ndp
 13679	Conservative Party
 13680	Liberal Party
 13683	Conservative Party
 13684	Conservative Party
+13686	Liberal Party
 13729	ndp
+13730	Liberal Party
 13734	Don't know/ Prefer not to answer
+13735	Don't know/ Prefer not to answer
 13737	Don't know/ Prefer not to answer
 13745	Don't know/ Prefer not to answer
 13759	Don't know/ Prefer not to answer
 13762	Bloc Qu<e9>b<e9>cois
 13770	Liberal Party
+13783	Green Party
 13796	Bloc Qu<e9>b<e9>cois
 13804	ndp
 13826	Liberal Party
@@ -1163,35 +1389,46 @@
 13861	Liberal Party
 13864	Conservative Party
 13872	Liberal Party
+13882	Liberal Party
 13888	Liberal Party
 13903	Liberal Party
 13913	Liberal Party
 13922	Liberal Party
+13923	Liberal Party
 13932	Conservative Party
+13936	Liberal Party
 13938	ndp
 13943	Conservative Party
 13947	Conservative Party
 13956	Liberal Party
 13959	Green Party
 13962	Liberal Party
+13967	Don't know/ Prefer not to answer
 13999	Liberal Party
 14010	Bloc Qu<e9>b<e9>cois
 14015	Don't know/ Prefer not to answer
 14017	Conservative Party
+14018	Conservative Party
 14027	Conservative Party
-14037	Conservative Party
+14037	Don't know/ Prefer not to answer
 14059	Conservative Party
-14101	Liberal Party
+14101	Don't know/ Prefer not to answer
 14103	Liberal Party
 14123	Don't know/ Prefer not to answer
+14125	Don't know/ Prefer not to answer
 14138	ndp
 14141	Liberal Party
 14149	Don't know/ Prefer not to answer
-14154	Don't know/ Prefer not to answer
+14154	Liberal Party
 14184	Conservative Party
+14200	Conservative Party
+14208	Conservative Party
+14212	ndp
 14216	Don't know/ Prefer not to answer
+14222	Liberal Party
 14226	Green Party
 14228	Don't know/ Prefer not to answer
+14241	Don't know/ Prefer not to answer
 14251	Conservative Party
 14254	Don't know/ Prefer not to answer
 14255	Liberal Party
@@ -1200,10 +1437,12 @@
 14289	Liberal Party
 14293	Liberal Party
 14298	Conservative Party
+14311	Conservative Party
 14339	Don't know/ Prefer not to answer
 14345	Conservative Party
 14359	Don't know/ Prefer not to answer
-14362	Green Party
+14362	ndp
+14383	ndp
 14387	Liberal Party
 14391	Conservative Party
 14395	Liberal Party
@@ -1212,30 +1451,35 @@
 14411	Conservative Party
 14413	Liberal Party
 14417	Conservative Party
-14418	ndp
+14418	Liberal Party
 14438	Liberal Party
 14452	Liberal Party
 14465	Liberal Party
+14469	ndp
 14479	Liberal Party
 14494	ndp
 14502	Conservative Party
 14506	ndp
 14525	ndp
+14536	Conservative Party
 14537	ndp
 14545	Don't know/ Prefer not to answer
 14572	Liberal Party
 14591	Liberal Party
+14613	Green Party
 14616	ndp
+14623	People's Party
 14633	Green Party
 14655	Conservative Party
 14663	ndp
 14664	Conservative Party
+14679	Conservative Party
 14695	Liberal Party
 14705	Conservative Party
 14713	ndp
 14722	Conservative Party
 14747	Conservative Party
-14773	Conservative Party
+14773	Liberal Party
 14778	Liberal Party
 14793	Conservative Party
 14821	Green Party
@@ -1246,14 +1490,18 @@
 14859	Conservative Party
 14862	Don't know/ Prefer not to answer
 14867	Liberal Party
+14868	Liberal Party
 14869	Liberal Party
+14870	Liberal Party
 14878	Green Party
 14879	ndp
+14889	Liberal Party
 14891	ndp
 14920	Liberal Party
 14928	ndp
 14942	Bloc Qu<e9>b<e9>cois
 14943	Liberal Party
+14945	Green Party
 14946	Bloc Qu<e9>b<e9>cois
 14953	Liberal Party
 14956	Liberal Party
@@ -1265,8 +1513,9 @@
 15011	Conservative Party
 15039	Conservative Party
 15057	ndp
-15062	Liberal Party
+15062	Conservative Party
 15097	Conservative Party
+15109	Liberal Party
 15113	Conservative Party
 15129	Conservative Party
 15134	Liberal Party
@@ -1277,28 +1526,39 @@
 15193	Don't know/ Prefer not to answer
 15202	Conservative Party
 15206	Green Party
+15207	ndp
 15225	Conservative Party
 15262	ndp
 15276	Conservative Party
+15295	Liberal Party
 15301	Liberal Party
 15308	Liberal Party
 15312	Conservative Party
+15315	Liberal Party
 15317	Liberal Party
 15322	Liberal Party
 15344	Don't know/ Prefer not to answer
 15348	Don't know/ Prefer not to answer
+15365	Liberal Party
 15382	Conservative Party
+15387	ndp
 15406	Conservative Party
 15424	Liberal Party
 15431	Conservative Party
+15438	Green Party
+15440	Conservative Party
 15466	ndp
+15493	Green Party
 15497	Don't know/ Prefer not to answer
 15525	Conservative Party
 15534	Conservative Party
 15536	Conservative Party
 15569	Conservative Party
+15570	Don't know/ Prefer not to answer
 15595	Liberal Party
 15607	Don't know/ Prefer not to answer
+15609	Liberal Party
+15612	Liberal Party
 15616	Conservative Party
 15618	Liberal Party
 15623	ndp
@@ -1307,24 +1567,31 @@
 15637	Conservative Party
 15643	Conservative Party
 15650	Green Party
+15656	Conservative Party
+15661	Don't know/ Prefer not to answer
 15672	Liberal Party
-15676	Bloc Qu<e9>b<e9>cois
+15676	Liberal Party
 15684	Conservative Party
 15687	Conservative Party
-15719	ndp
+15701	Conservative Party
+15719	Liberal Party
 15745	ndp
+15812	Liberal Party
 15817	Green Party
 15855	Conservative Party
 15877	Don't know/ Prefer not to answer
 15901	Liberal Party
 15904	Green Party
-15932	Liberal Party
+15925	Liberal Party
+15932	ndp
 15961	Liberal Party
+15965	Liberal Party
 15967	Liberal Party
-15993	Liberal Party
+15991	Liberal Party
+15993	Green Party
 15998	Don't know/ Prefer not to answer
 16005	Liberal Party
-16007	Green Party
+16007	Liberal Party
 16009	Liberal Party
 16015	Liberal Party
 16023	Conservative Party
@@ -1343,7 +1610,8 @@
 16182	Don't know/ Prefer not to answer
 16186	ndp
 16197	Liberal Party
-16199	Green Party
+16199	Liberal Party
+16202	Don't know/ Prefer not to answer
 16203	ndp
 16210	Conservative Party
 16237	Don't know/ Prefer not to answer
@@ -1355,11 +1623,13 @@
 16319	Conservative Party
 16323	ndp
 16329	Liberal Party
-16330	Don't know/ Prefer not to answer
+16330	Conservative Party
 16340	Liberal Party
-16361	Don't know/ Prefer not to answer
+16361	Conservative Party
 16393	Liberal Party
+16394	Don't know/ Prefer not to answer
 16400	ndp
+16401	People's Party
 16403	Liberal Party
 16408	Conservative Party
 16409	Liberal Party
@@ -1380,17 +1650,23 @@
 16539	ndp
 16540	Conservative Party
 16557	Liberal Party
+16558	Liberal Party
 16563	Don't know/ Prefer not to answer
 16579	Conservative Party
+16583	Conservative Party
 16593	Conservative Party
 16595	Liberal Party
 16597	Liberal Party
+16616	ndp
 16617	Conservative Party
 16646	Liberal Party
 16663	Liberal Party
+16664	Liberal Party
+16667	Don't know/ Prefer not to answer
 16686	Bloc Qu<e9>b<e9>cois
 16692	ndp
-16706	Conservative Party
+16702	Liberal Party
+16706	People's Party
 16720	ndp
 16735	Conservative Party
 16737	ndp
@@ -1404,8 +1680,10 @@
 16814	Conservative Party
 16818	Bloc Qu<e9>b<e9>cois
 16824	Liberal Party
+16843	Don't know/ Prefer not to answer
 16867	People's Party
 16889	Liberal Party
+16897	Bloc Qu<e9>b<e9>cois
 16910	ndp
 16917	Conservative Party
 16925	Don't know/ Prefer not to answer
@@ -1423,22 +1701,29 @@
 17078	Liberal Party
 17089	Don't know/ Prefer not to answer
 17101	Conservative Party
-17148	Liberal Party
+17148	Don't know/ Prefer not to answer
+17164	People's Party
 17168	ndp
+17178	Green Party
+17180	Green Party
 17189	Conservative Party
 17193	Conservative Party
-17195	Don't know/ Prefer not to answer
+17195	ndp
+17220	Don't know/ Prefer not to answer
 17223	Conservative Party
 17225	Conservative Party
+17235	ndp
 17259	Conservative Party
+17266	Liberal Party
 17267	Don't know/ Prefer not to answer
 17281	Liberal Party
 17295	Conservative Party
 17302	Liberal Party
 17312	Don't know/ Prefer not to answer
 17328	Conservative Party
+17331	Liberal Party
 17352	Conservative Party
-17378	Don't know/ Prefer not to answer
+17378	ndp
 17389	Liberal Party
 17399	Conservative Party
 17400	Bloc Qu<e9>b<e9>cois
@@ -1446,65 +1731,87 @@
 17414	Liberal Party
 17433	Conservative Party
 17437	Conservative Party
+17446	Liberal Party
+17447	Green Party
 17455	Liberal Party
 17460	ndp
 17475	Conservative Party
 17491	Conservative Party
-17526	Liberal Party
+17526	Conservative Party
 17536	Don't know/ Prefer not to answer
 17545	Liberal Party
+17581	Don't know/ Prefer not to answer
 17587	Liberal Party
 17588	Liberal Party
 17623	Don't know/ Prefer not to answer
 17625	Conservative Party
 17634	Liberal Party
+17645	Liberal Party
 17648	ndp
 17654	Conservative Party
 17660	Conservative Party
 17668	Conservative Party
 17675	Don't know/ Prefer not to answer
+17699	Don't know/ Prefer not to answer
 17707	Conservative Party
 17717	Conservative Party
 17720	Conservative Party
+17723	ndp
 17752	Conservative Party
 17772	Liberal Party
 17792	Conservative Party
 17813	Don't know/ Prefer not to answer
+17819	Conservative Party
 17840	Conservative Party
+17852	ndp
+17870	Don't know/ Prefer not to answer
+17889	Don't know/ Prefer not to answer
 17905	ndp
 17919	Green Party
+17943	Liberal Party
+17946	Green Party
 17958	Liberal Party
 17966	ndp
 17972	Conservative Party
 17979	Bloc Qu<e9>b<e9>cois
+17989	Green Party
 18005	Liberal Party
 18031	Liberal Party
 18033	Conservative Party
 18034	Liberal Party
+18035	Liberal Party
+18045	Conservative Party
 18056	Conservative Party
 18062	Bloc Qu<e9>b<e9>cois
-18070	Liberal Party
-18082	Conservative Party
+18063	Conservative Party
+18070	Don't know/ Prefer not to answer
+18082	Don't know/ Prefer not to answer
 18111	Conservative Party
 18112	Liberal Party
 18115	Liberal Party
 18125	Conservative Party
 18134	Liberal Party
 18142	Don't know/ Prefer not to answer
+18145	Conservative Party
 18155	Conservative Party
-18176	Liberal Party
+18176	Green Party
 18178	Liberal Party
+18193	ndp
 18198	Liberal Party
+18213	ndp
 18219	ndp
 18232	Don't know/ Prefer not to answer
 18241	Conservative Party
 18245	Liberal Party
+18254	Conservative Party
 18257	ndp
+18265	Don't know/ Prefer not to answer
 18271	Conservative Party
 18306	Liberal Party
 18332	Liberal Party
 18338	Liberal Party
-18361	Don't know/ Prefer not to answer
+18346	ndp
+18361	Liberal Party
 18379	Conservative Party
 18398	Conservative Party
 18417	Don't know/ Prefer not to answer
@@ -1521,18 +1828,24 @@
 18557	Conservative Party
 18576	Liberal Party
 18584	Liberal Party
+18589	Conservative Party
 18592	ndp
 18601	Liberal Party
 18605	Conservative Party
 18615	Conservative Party
 18618	Conservative Party
+18636	Liberal Party
 18640	Don't know/ Prefer not to answer
 18659	ndp
 18661	ndp
 18676	Liberal Party
+18709	Don't know/ Prefer not to answer
 18731	Liberal Party
 18740	Liberal Party
 18744	Liberal Party
+18749	Conservative Party
+18770	ndp
+18774	Conservative Party
 18775	Bloc Qu<e9>b<e9>cois
 18795	Liberal Party
 18803	Conservative Party
@@ -1544,30 +1857,39 @@
 18862	Conservative Party
 18863	Liberal Party
 18873	Liberal Party
-18920	Conservative Party
+18879	Conservative Party
+18920	Don't know/ Prefer not to answer
 18921	Liberal Party
 18944	Conservative Party
 18953	Conservative Party
 18959	Liberal Party
 18965	Don't know/ Prefer not to answer
+18986	Don't know/ Prefer not to answer
 18993	Liberal Party
+19017	Green Party
 19026	Liberal Party
 19027	Conservative Party
 19051	Don't know/ Prefer not to answer
-19069	Conservative Party
+19069	Don't know/ Prefer not to answer
 19073	Conservative Party
-19110	Conservative Party
+19086	Conservative Party
+19110	Don't know/ Prefer not to answer
+19120	ndp
 19131	Liberal Party
 19161	Green Party
+19166	Conservative Party
 19179	Liberal Party
 19181	Conservative Party
+19196	ndp
 19201	Conservative Party
 19202	Liberal Party
 19225	Liberal Party
 19234	Liberal Party
 19235	Liberal Party
+19241	Liberal Party
 19244	Liberal Party
 19252	Liberal Party
+19256	Don't know/ Prefer not to answer
 19258	ndp
 19269	Conservative Party
 19289	Liberal Party
@@ -1575,8 +1897,9 @@
 19298	Conservative Party
 19304	People's Party
 19309	Liberal Party
-19311	Liberal Party
+19311	Don't know/ Prefer not to answer
 19319	Liberal Party
+19326	Don't know/ Prefer not to answer
 19338	Conservative Party
 19343	Liberal Party
 19349	Liberal Party
@@ -1585,141 +1908,192 @@
 19399	Conservative Party
 19440	ndp
 19455	Liberal Party
+19488	Don't know/ Prefer not to answer
 19490	Conservative Party
 19495	Don't know/ Prefer not to answer
 19496	Liberal Party
+19511	Liberal Party
+19524	Conservative Party
 19528	Liberal Party
 19553	ndp
 19563	Don't know/ Prefer not to answer
 19564	Liberal Party
-19572	Don't know/ Prefer not to answer
+19572	ndp
 19583	ndp
 19605	Green Party
 19612	Conservative Party
 19613	ndp
 19631	Conservative Party
+19634	Don't know/ Prefer not to answer
+19637	Liberal Party
 19638	Conservative Party
 19645	Conservative Party
 19664	Liberal Party
 19665	Liberal Party
 19675	Liberal Party
+19676	Liberal Party
 19681	Green Party
-19683	Conservative Party
-19694	Bloc Qu<e9>b<e9>cois
-19706	Don't know/ Prefer not to answer
+19683	ndp
+19694	Conservative Party
+19706	Liberal Party
 19708	Bloc Qu<e9>b<e9>cois
 19718	Liberal Party
 19723	Conservative Party
+19753	ndp
+19778	Conservative Party
 19781	Liberal Party
 19785	Don't know/ Prefer not to answer
 19790	Bloc Qu<e9>b<e9>cois
 19794	Don't know/ Prefer not to answer
 19817	Conservative Party
 19818	Don't know/ Prefer not to answer
-19823	Bloc Qu<e9>b<e9>cois
+19823	Don't know/ Prefer not to answer
+19826	Liberal Party
 19856	Conservative Party
+19875	Liberal Party
 19880	Liberal Party
 19909	Bloc Qu<e9>b<e9>cois
+19911	Don't know/ Prefer not to answer
 19936	Liberal Party
-19941	Liberal Party
+19941	Green Party
+19958	ndp
 19962	Conservative Party
 19963	Conservative Party
 19969	Conservative Party
+19971	Conservative Party
 19972	ndp
 19973	ndp
 19975	Liberal Party
 19987	Liberal Party
 19990	Conservative Party
+20006	Liberal Party
 20015	Bloc Qu<e9>b<e9>cois
 20025	Liberal Party
-20047	Green Party
+20031	Conservative Party
+20047	ndp
 20071	Don't know/ Prefer not to answer
+20073	Liberal Party
 20083	ndp
+20085	People's Party
 20097	Liberal Party
 20102	Conservative Party
 20107	Liberal Party
 20117	Conservative Party
 20123	Conservative Party
 20125	Liberal Party
+20127	Don't know/ Prefer not to answer
 20134	Liberal Party
+20150	Liberal Party
 20151	Conservative Party
 20152	Liberal Party
+20157	Conservative Party
 20162	Don't know/ Prefer not to answer
+20167	Liberal Party
 20169	Liberal Party
+20172	Don't know/ Prefer not to answer
 20178	Liberal Party
 20192	Liberal Party
-20195	ndp
+20195	Conservative Party
+20202	Liberal Party
+20205	Liberal Party
 20211	ndp
 20223	Conservative Party
 20255	Green Party
+20270	Green Party
 20289	Conservative Party
 20294	Conservative Party
 20306	Liberal Party
+20319	Conservative Party
 20339	Liberal Party
 20343	Conservative Party
 20369	Liberal Party
 20377	Liberal Party
 20383	Green Party
 20385	Green Party
+20391	Don't know/ Prefer not to answer
 20393	ndp
 20407	ndp
 20456	Liberal Party
+20460	Liberal Party
 20465	ndp
 20470	Liberal Party
 20472	Conservative Party
 20491	Liberal Party
+20493	Liberal Party
 20506	Conservative Party
+20529	Liberal Party
+20530	ndp
 20547	ndp
 20569	Don't know/ Prefer not to answer
-20575	Conservative Party
+20575	Liberal Party
 20598	Conservative Party
 20610	Liberal Party
 20616	ndp
 20624	Conservative Party
 20631	Conservative Party
-20647	Don't know/ Prefer not to answer
+20647	Green Party
 20658	Green Party
+20674	Don't know/ Prefer not to answer
 20677	Liberal Party
 20702	Liberal Party
 20729	Conservative Party
 20744	Don't know/ Prefer not to answer
 20753	Don't know/ Prefer not to answer
+20761	Green Party
 20764	Don't know/ Prefer not to answer
 20773	Liberal Party
 20781	Conservative Party
-20796	Green Party
+20796	Don't know/ Prefer not to answer
+20798	Liberal Party
+20811	Conservative Party
 20819	Conservative Party
 20832	Liberal Party
+20834	Liberal Party
 20842	Conservative Party
 20843	Conservative Party
 20855	Bloc Qu<e9>b<e9>cois
 20856	Conservative Party
-20858	ndp
+20858	Green Party
+20867	ndp
 20875	ndp
+20879	Conservative Party
 20884	Conservative Party
 20900	Green Party
+20910	Liberal Party
 20921	Bloc Qu<e9>b<e9>cois
 20927	ndp
 20952	Don't know/ Prefer not to answer
 20965	ndp
 20970	Conservative Party
+20982	ndp
 20986	Liberal Party
 20993	ndp
 20997	Liberal Party
-20999	Bloc Qu<e9>b<e9>cois
+20999	People's Party
 21012	Liberal Party
+21013	Don't know/ Prefer not to answer
+21048	Conservative Party
+21053	Conservative Party
 21067	Don't know/ Prefer not to answer
-21108	Green Party
+21108	Conservative Party
 21110	Green Party
 21123	Liberal Party
 21135	Don't know/ Prefer not to answer
+21139	Liberal Party
 21142	Bloc Qu<e9>b<e9>cois
+21145	Don't know/ Prefer not to answer
 21162	Liberal Party
+21166	Green Party
+21168	Don't know/ Prefer not to answer
 21192	Conservative Party
 21196	Conservative Party
 21197	People's Party
+21199	Don't know/ Prefer not to answer
+21202	Liberal Party
+21207	Liberal Party
 21224	Green Party
 21252	ndp
+21270	Liberal Party
 21271	Liberal Party
 21272	Bloc Qu<e9>b<e9>cois
 21273	ndp
@@ -1728,11 +2102,15 @@
 21300	ndp
 21325	Liberal Party
 21326	Conservative Party
-21369	Bloc Qu<e9>b<e9>cois
+21341	Conservative Party
+21344	Liberal Party
+21353	Conservative Party
+21369	Liberal Party
 21379	Don't know/ Prefer not to answer
 21383	Green Party
-21400	Green Party
+21400	ndp
 21403	ndp
+21408	Conservative Party
 21443	Conservative Party
 21455	Bloc Qu<e9>b<e9>cois
 21463	Bloc Qu<e9>b<e9>cois
@@ -1741,7 +2119,8 @@
 21513	ndp
 21533	ndp
 21536	Conservative Party
-21543	Bloc Qu<e9>b<e9>cois
+21543	Conservative Party
+21551	Liberal Party
 21553	Conservative Party
 21554	Liberal Party
 21562	Conservative Party
@@ -1749,25 +2128,33 @@
 21573	Liberal Party
 21589	Liberal Party
 21590	Liberal Party
+21597	ndp
 21599	Don't know/ Prefer not to answer
+21611	Liberal Party
 21636	Conservative Party
 21639	Don't know/ Prefer not to answer
-21656	Don't know/ Prefer not to answer
+21656	Liberal Party
 21658	ndp
 21671	Conservative Party
 21683	Liberal Party
 21684	ndp
-21703	Green Party
-21724	Don't know/ Prefer not to answer
+21689	Don't know/ Prefer not to answer
+21703	Liberal Party
+21718	Conservative Party
+21724	ndp
+21729	Liberal Party
+21736	Conservative Party
 21743	Liberal Party
 21756	ndp
 21771	Conservative Party
 21786	Liberal Party
 21807	Conservative Party
 21844	Liberal Party
+21851	Don't know/ Prefer not to answer
 21854	ndp
 21855	People's Party
 21860	Liberal Party
+21892	Liberal Party
 21895	Liberal Party
 21969	Conservative Party
 21974	Green Party
@@ -1778,21 +2165,35 @@
 22029	People's Party
 22039	Liberal Party
 22043	Liberal Party
-22047	Green Party
-22049	Green Party
+22047	Conservative Party
+22049	Liberal Party
+22051	Don't know/ Prefer not to answer
+22072	ndp
+22083	Green Party
 22098	Green Party
 22107	Conservative Party
 22110	Liberal Party
+22122	Conservative Party
+22124	Conservative Party
+22142	Conservative Party
+22143	Conservative Party
 22147	ndp
+22153	Conservative Party
+22158	Don't know/ Prefer not to answer
 22165	Conservative Party
 22172	Conservative Party
-22199	Liberal Party
+22199	Conservative Party
 22205	Conservative Party
+22222	Don't know/ Prefer not to answer
+22228	Conservative Party
 22231	Conservative Party
 22248	Conservative Party
 22260	Liberal Party
-22284	Don't know/ Prefer not to answer
+22284	Conservative Party
 22289	People's Party
+22298	ndp
+22301	Liberal Party
+22310	Liberal Party
 22314	Don't know/ Prefer not to answer
 22317	Liberal Party
 22327	Liberal Party
@@ -1802,11 +2203,13 @@
 22401	Don't know/ Prefer not to answer
 22408	Don't know/ Prefer not to answer
 22410	Conservative Party
+22423	Green Party
 22435	Liberal Party
 22439	Don't know/ Prefer not to answer
 22449	Conservative Party
 22453	Liberal Party
 22455	Conservative Party
+22459	Liberal Party
 22477	Conservative Party
 22489	Liberal Party
 22499	Conservative Party
@@ -1820,7 +2223,8 @@
 22600	ndp
 22616	ndp
 22621	ndp
-22626	Don't know/ Prefer not to answer
+22626	Conservative Party
+22636	Conservative Party
 22642	Conservative Party
 22657	Don't know/ Prefer not to answer
 22687	Liberal Party
@@ -1829,11 +2233,15 @@
 22729	Liberal Party
 22734	Liberal Party
 22745	Liberal Party
+22746	Conservative Party
 22774	ndp
 22777	Liberal Party
+22788	Conservative Party
 22818	ndp
 22837	Liberal Party
+22841	Liberal Party
 22878	ndp
+22895	Liberal Party
 22921	Liberal Party
 22927	Conservative Party
 22934	ndp
@@ -1841,24 +2249,30 @@
 22940	ndp
 22948	Conservative Party
 22957	Conservative Party
+22972	ndp
 22982	Liberal Party
-22998	ndp
+22998	Don't know/ Prefer not to answer
 23002	Liberal Party
 23015	Liberal Party
 23044	ndp
+23057	ndp
 23060	ndp
 23065	Conservative Party
 23071	Conservative Party
+23102	Liberal Party
 23108	Liberal Party
 23118	Conservative Party
 23119	ndp
+23136	ndp
+23152	Conservative Party
 23162	Don't know/ Prefer not to answer
 23163	ndp
 23167	Liberal Party
 23172	Conservative Party
 23219	Liberal Party
-23223	Green Party
+23223	Liberal Party
 23239	Conservative Party
+23246	Conservative Party
 23249	Conservative Party
 23256	Don't know/ Prefer not to answer
 23277	Liberal Party
@@ -1866,28 +2280,35 @@
 23317	Liberal Party
 23327	Conservative Party
 23337	Liberal Party
-23343	Conservative Party
+23343	ndp
 23360	ndp
+23398	Liberal Party
 23402	Liberal Party
+23413	Liberal Party
 23414	Conservative Party
 23427	Don't know/ Prefer not to answer
 23440	Conservative Party
+23444	Conservative Party
+23445	Conservative Party
 23452	Conservative Party
 23453	Liberal Party
+23469	Conservative Party
 23489	ndp
 23490	Liberal Party
 23508	Liberal Party
 23509	Liberal Party
 23511	Conservative Party
+23520	Don't know/ Prefer not to answer
 23523	Don't know/ Prefer not to answer
 23528	Conservative Party
 23537	Liberal Party
-23540	Conservative Party
+23540	Don't know/ Prefer not to answer
 23554	Conservative Party
 23562	ndp
 23598	Conservative Party
 23611	Conservative Party
 23612	Conservative Party
+23617	Don't know/ Prefer not to answer
 23618	Bloc Qu<e9>b<e9>cois
 23642	Bloc Qu<e9>b<e9>cois
 23657	ndp
@@ -1895,16 +2316,20 @@
 23664	Don't know/ Prefer not to answer
 23676	Don't know/ Prefer not to answer
 23680	Conservative Party
+23692	Conservative Party
+23711	Green Party
 23717	ndp
 23720	ndp
 23726	Conservative Party
 23743	Conservative Party
-23747	ndp
-23749	Don't know/ Prefer not to answer
+23747	Liberal Party
+23749	Liberal Party
 23750	Conservative Party
+23753	Liberal Party
 23757	Conservative Party
 23758	Liberal Party
 23759	Conservative Party
+23774	Green Party
 23780	Conservative Party
 23784	Conservative Party
 23785	Conservative Party
@@ -1913,28 +2338,35 @@
 23811	Don't know/ Prefer not to answer
 23813	Liberal Party
 23815	Bloc Qu<e9>b<e9>cois
-23820	Bloc Qu<e9>b<e9>cois
+23820	ndp
+23829	Liberal Party
 23834	Don't know/ Prefer not to answer
 23836	Conservative Party
 23845	Conservative Party
 23863	Liberal Party
+23873	Liberal Party
 23885	Liberal Party
 23893	ndp
 23894	Liberal Party
 23923	People's Party
-23940	ndp
+23940	Liberal Party
 23943	Bloc Qu<e9>b<e9>cois
 23958	Liberal Party
 23965	Conservative Party
+23968	Liberal Party
 23974	ndp
+23977	Don't know/ Prefer not to answer
+23981	ndp
 23984	ndp
 23990	Conservative Party
+23996	Liberal Party
 24008	Don't know/ Prefer not to answer
 24012	Liberal Party
 24019	Liberal Party
 24039	Liberal Party
 24044	Bloc Qu<e9>b<e9>cois
 24051	Conservative Party
+24055	ndp
 24062	ndp
 24069	Liberal Party
 24070	ndp
@@ -1942,10 +2374,14 @@
 24084	ndp
 24156	Liberal Party
 24164	Liberal Party
+24174	Conservative Party
 24193	Bloc Qu<e9>b<e9>cois
 24215	Bloc Qu<e9>b<e9>cois
 24220	Liberal Party
+24227	Conservative Party
 24229	Conservative Party
+24234	Liberal Party
+24235	Conservative Party
 24247	Conservative Party
 24248	Liberal Party
 24310	Conservative Party
@@ -1955,27 +2391,32 @@
 24362	Conservative Party
 24372	Conservative Party
 24375	Conservative Party
-24385	Don't know/ Prefer not to answer
+24385	Liberal Party
 24386	Liberal Party
 24388	Green Party
+24392	Liberal Party
 24399	Liberal Party
 24403	Don't know/ Prefer not to answer
 24406	Conservative Party
 24438	ndp
 24441	Liberal Party
+24448	Don't know/ Prefer not to answer
 24450	Liberal Party
 24467	ndp
 24476	Conservative Party
 24491	Liberal Party
 24497	ndp
+24505	Don't know/ Prefer not to answer
 24520	Bloc Qu<e9>b<e9>cois
 24526	ndp
 24528	Liberal Party
-24542	Liberal Party
+24542	Don't know/ Prefer not to answer
 24579	Conservative Party
 24587	Don't know/ Prefer not to answer
+24588	Liberal Party
 24596	Liberal Party
 24656	Liberal Party
+24664	ndp
 24667	Conservative Party
 24678	Conservative Party
 24682	Bloc Qu<e9>b<e9>cois
@@ -1983,6 +2424,7 @@
 24698	Liberal Party
 24700	Liberal Party
 24701	Conservative Party
+24702	Don't know/ Prefer not to answer
 24705	Liberal Party
 24720	Liberal Party
 24722	Conservative Party
@@ -1991,32 +2433,46 @@
 24729	Liberal Party
 24738	ndp
 24745	ndp
+24750	Conservative Party
 24751	Liberal Party
 24753	Conservative Party
 24761	Conservative Party
 24767	Conservative Party
 24773	ndp
 24779	Liberal Party
-24781	Bloc Qu<e9>b<e9>cois
+24781	Don't know/ Prefer not to answer
 24794	Bloc Qu<e9>b<e9>cois
 24795	Liberal Party
+24805	Liberal Party
+24815	Bloc Qu<e9>b<e9>cois
 24842	Don't know/ Prefer not to answer
 24845	Liberal Party
 24853	Conservative Party
 24854	ndp
 24868	Don't know/ Prefer not to answer
+24881	Green Party
 24886	Conservative Party
+24910	ndp
 24926	Conservative Party
+24927	ndp
+24945	Don't know/ Prefer not to answer
+24948	ndp
+24952	Green Party
 24961	ndp
 24968	Conservative Party
+24984	Liberal Party
 24988	ndp
+25002	Green Party
 25003	Bloc Qu<e9>b<e9>cois
-25011	Conservative Party
+25011	Don't know/ Prefer not to answer
+25016	Conservative Party
+25027	ndp
 25032	Liberal Party
 25034	Don't know/ Prefer not to answer
 25044	Liberal Party
 25073	ndp
 25077	Liberal Party
+25080	Conservative Party
 25083	Conservative Party
 25094	Bloc Qu<e9>b<e9>cois
 25101	Conservative Party
@@ -2026,26 +2482,33 @@
 25129	Conservative Party
 25143	Bloc Qu<e9>b<e9>cois
 25179	Conservative Party
+25195	ndp
 25203	Liberal Party
 25227	Don't know/ Prefer not to answer
 25230	Conservative Party
+25255	Conservative Party
 25269	Liberal Party
+25286	Don't know/ Prefer not to answer
 25288	Conservative Party
 25290	Liberal Party
+25304	Don't know/ Prefer not to answer
 25305	Liberal Party
 25325	Don't know/ Prefer not to answer
+25341	Conservative Party
 25347	Liberal Party
 25359	Conservative Party
 25367	Conservative Party
 25371	Liberal Party
 25372	Don't know/ Prefer not to answer
 25379	ndp
-25403	ndp
+25403	Liberal Party
+25412	Liberal Party
 25416	Bloc Qu<e9>b<e9>cois
 25425	Liberal Party
 25430	ndp
 25441	ndp
-25457	ndp
+25447	Don't know/ Prefer not to answer
+25457	Liberal Party
 25461	Conservative Party
 25465	Liberal Party
 25485	Conservative Party
@@ -2053,7 +2516,9 @@
 25545	Conservative Party
 25559	Don't know/ Prefer not to answer
 25565	ndp
-25590	Liberal Party
+25573	ndp
+25583	Bloc Qu<e9>b<e9>cois
+25590	Don't know/ Prefer not to answer
 25608	Conservative Party
 25614	Liberal Party
 25626	Don't know/ Prefer not to answer
@@ -2065,11 +2530,12 @@
 25685	ndp
 25724	Conservative Party
 25733	Conservative Party
+25752	ndp
 25765	Liberal Party
 25788	Don't know/ Prefer not to answer
 25827	Liberal Party
 25837	Liberal Party
-25860	Liberal Party
+25860	Green Party
 25883	Liberal Party
 25899	Conservative Party
 25901	ndp
@@ -2079,8 +2545,11 @@
 25926	ndp
 25934	Bloc Qu<e9>b<e9>cois
 25942	Conservative Party
+25943	Conservative Party
+25953	Don't know/ Prefer not to answer
 25983	Liberal Party
 25990	Conservative Party
+26019	Don't know/ Prefer not to answer
 26026	Don't know/ Prefer not to answer
 26039	Don't know/ Prefer not to answer
 26046	Conservative Party
@@ -2093,16 +2562,19 @@
 26108	Don't know/ Prefer not to answer
 26124	Conservative Party
 26131	Bloc Qu<e9>b<e9>cois
+26134	Liberal Party
 26137	Liberal Party
+26164	Conservative Party
 26180	Don't know/ Prefer not to answer
 26197	Conservative Party
 26208	Liberal Party
-26213	Conservative Party
+26213	Don't know/ Prefer not to answer
 26218	Liberal Party
 26225	ndp
 26233	Conservative Party
 26241	Bloc Qu<e9>b<e9>cois
 26245	Liberal Party
+26269	ndp
 26285	Conservative Party
 26312	Liberal Party
 26322	Liberal Party
@@ -2111,37 +2583,48 @@
 26351	ndp
 26361	Don't know/ Prefer not to answer
 26369	Liberal Party
+26371	ndp
 26373	Don't know/ Prefer not to answer
 26381	Conservative Party
 26382	Conservative Party
 26389	Liberal Party
 26404	Green Party
+26433	Liberal Party
 26437	Liberal Party
 26440	ndp
 26468	ndp
+26479	Don't know/ Prefer not to answer
 26484	Liberal Party
 26487	Conservative Party
+26490	ndp
 26492	Liberal Party
 26496	Conservative Party
 26533	Liberal Party
 26534	ndp
+26545	Liberal Party
 26557	Liberal Party
+26564	Don't know/ Prefer not to answer
 26568	Conservative Party
 26576	Conservative Party
 26580	ndp
 26601	Conservative Party
 26623	Bloc Qu<e9>b<e9>cois
 26627	Liberal Party
-26647	Green Party
+26631	Conservative Party
+26647	Don't know/ Prefer not to answer
 26650	Liberal Party
+26658	Liberal Party
 26668	Liberal Party
 26695	Liberal Party
-26704	Don't know/ Prefer not to answer
-26712	Don't know/ Prefer not to answer
+26704	Conservative Party
+26708	Conservative Party
+26712	Conservative Party
+26722	Conservative Party
 26730	Liberal Party
 26735	Liberal Party
 26739	Conservative Party
 26763	Liberal Party
+26764	ndp
 26772	Liberal Party
 26808	Liberal Party
 26854	Bloc Qu<e9>b<e9>cois
@@ -2151,6 +2634,8 @@
 26903	Liberal Party
 26908	Conservative Party
 26914	Liberal Party
+26917	Liberal Party
+26938	Don't know/ Prefer not to answer
 26950	Liberal Party
 26953	Conservative Party
 26961	Liberal Party
@@ -2158,26 +2643,33 @@
 26964	Conservative Party
 26972	Liberal Party
 27013	ndp
-27026	Liberal Party
-27027	ndp
+27026	ndp
+27027	Green Party
+27036	ndp
 27038	Liberal Party
 27040	Bloc Qu<e9>b<e9>cois
 27069	Don't know/ Prefer not to answer
 27089	Liberal Party
+27091	ndp
 27094	Conservative Party
 27118	ndp
+27126	Liberal Party
 27133	Conservative Party
 27136	Conservative Party
 27138	ndp
 27146	Liberal Party
+27163	Green Party
 27168	Liberal Party
-27177	Liberal Party
+27177	Don't know/ Prefer not to answer
+27238	Liberal Party
 27255	Liberal Party
 27268	People's Party
 27269	Liberal Party
+27273	Don't know/ Prefer not to answer
 27294	Liberal Party
 27299	Liberal Party
 27302	Don't know/ Prefer not to answer
+27317	Conservative Party
 27327	Liberal Party
 27341	Liberal Party
 27347	Don't know/ Prefer not to answer
@@ -2185,7 +2677,7 @@
 27355	Liberal Party
 27364	Conservative Party
 27370	Conservative Party
-27375	ndp
+27375	Don't know/ Prefer not to answer
 27392	Conservative Party
 27401	Conservative Party
 27409	Liberal Party
@@ -2196,8 +2688,9 @@
 27452	Liberal Party
 27459	Conservative Party
 27467	Conservative Party
-27496	Green Party
+27496	Don't know/ Prefer not to answer
 27497	Conservative Party
+27510	Liberal Party
 27534	Green Party
 27535	Liberal Party
 27537	Conservative Party
@@ -2205,35 +2698,45 @@
 27546	Liberal Party
 27552	Liberal Party
 27553	ndp
+27577	Liberal Party
 27592	Conservative Party
 27600	Conservative Party
+27602	ndp
+27618	Green Party
 27632	ndp
 27656	Liberal Party
 27669	ndp
 27675	Green Party
 27677	Liberal Party
+27681	Conservative Party
 27685	ndp
-27701	Don't know/ Prefer not to answer
+27701	Liberal Party
 27705	Liberal Party
 27715	Conservative Party
 27719	ndp
 27722	Liberal Party
 27737	Liberal Party
+27738	Conservative Party
+27742	Liberal Party
+27747	ndp
 27751	Conservative Party
 27752	ndp
 27754	Conservative Party
-27762	Don't know/ Prefer not to answer
+27762	ndp
+27777	Liberal Party
 27789	Liberal Party
 27802	Conservative Party
 27811	Conservative Party
 27829	Liberal Party
 27851	ndp
 27852	Liberal Party
+27870	Conservative Party
 27878	Conservative Party
 27894	ndp
-27902	Bloc Qu<e9>b<e9>cois
+27902	Don't know/ Prefer not to answer
 27916	Liberal Party
-27928	Conservative Party
+27918	Don't know/ Prefer not to answer
+27928	Don't know/ Prefer not to answer
 27929	Conservative Party
 27946	Conservative Party
 27951	Conservative Party
@@ -2241,15 +2744,20 @@
 27964	Liberal Party
 27985	Don't know/ Prefer not to answer
 27990	ndp
-28004	Conservative Party
+28004	ndp
 28010	Liberal Party
 28025	ndp
 28076	Conservative Party
+28082	Green Party
 28088	Liberal Party
+28090	Green Party
+28112	Don't know/ Prefer not to answer
+28113	Conservative Party
 28122	Conservative Party
 28128	Green Party
 28131	ndp
 28171	Bloc Qu<e9>b<e9>cois
+28194	Liberal Party
 28230	Don't know/ Prefer not to answer
 28231	Conservative Party
 28239	Liberal Party
@@ -2258,35 +2766,41 @@
 28319	Liberal Party
 28323	Liberal Party
 28325	Liberal Party
-28327	Conservative Party
+28327	Liberal Party
+28331	Don't know/ Prefer not to answer
 28334	Liberal Party
 28338	Liberal Party
 28360	Liberal Party
 28366	Conservative Party
-28385	Liberal Party
+28385	ndp
 28388	Conservative Party
 28399	Conservative Party
 28406	Liberal Party
 28409	ndp
 28419	Liberal Party
+28434	ndp
 28450	Conservative Party
-28472	Don't know/ Prefer not to answer
+28459	Don't know/ Prefer not to answer
+28472	Liberal Party
 28489	Liberal Party
 28490	Liberal Party
 28509	Conservative Party
 28518	Conservative Party
 28519	Conservative Party
-28548	Green Party
+28526	Green Party
+28548	Liberal Party
 28559	ndp
 28593	Liberal Party
 28601	Conservative Party
-28624	Liberal Party
-28626	ndp
+28609	Conservative Party
+28624	Conservative Party
+28626	Liberal Party
 28635	Conservative Party
-28643	Don't know/ Prefer not to answer
+28643	Conservative Party
 28651	Conservative Party
 28655	Don't know/ Prefer not to answer
 28665	Liberal Party
+28689	Liberal Party
 28691	Liberal Party
 28696	Liberal Party
 28697	Conservative Party
@@ -2295,9 +2809,9 @@
 28725	Conservative Party
 28728	Bloc Qu<e9>b<e9>cois
 28741	ndp
-28771	Conservative Party
+28771	Don't know/ Prefer not to answer
 28777	Conservative Party
-28787	Don't know/ Prefer not to answer
+28787	Green Party
 28795	Conservative Party
 28797	Green Party
 28810	Conservative Party
@@ -2306,7 +2820,9 @@
 28884	Conservative Party
 28889	Liberal Party
 28904	Liberal Party
+28935	ndp
 28959	Conservative Party
+28964	Green Party
 28965	Green Party
 28975	Green Party
 28987	Liberal Party
@@ -2315,16 +2831,17 @@
 29002	Conservative Party
 29007	People's Party
 29029	Conservative Party
-29033	ndp
+29033	Conservative Party
 29037	Liberal Party
 29044	ndp
 29050	Conservative Party
 29068	Conservative Party
+29069	Liberal Party
 29078	Liberal Party
 29086	Liberal Party
 29098	Conservative Party
 29107	Conservative Party
-29114	Don't know/ Prefer not to answer
+29114	Bloc Qu<e9>b<e9>cois
 29133	Liberal Party
 29137	Liberal Party
 29157	Liberal Party
@@ -2339,6 +2856,7 @@
 29231	Don't know/ Prefer not to answer
 29257	Bloc Qu<e9>b<e9>cois
 29290	Don't know/ Prefer not to answer
+29318	Liberal Party
 29320	Liberal Party
 29322	Bloc Qu<e9>b<e9>cois
 29323	ndp
@@ -2346,15 +2864,18 @@
 29333	Liberal Party
 29340	Conservative Party
 29356	Bloc Qu<e9>b<e9>cois
+29360	Liberal Party
 29369	Conservative Party
 29371	Don't know/ Prefer not to answer
+29376	ndp
+29379	Conservative Party
 29386	Liberal Party
 29394	ndp
-29395	Conservative Party
+29395	Liberal Party
 29422	Conservative Party
 29430	Conservative Party
 29447	Liberal Party
-29474	Liberal Party
+29474	Don't know/ Prefer not to answer
 29482	Conservative Party
 29490	Don't know/ Prefer not to answer
 29503	Conservative Party
@@ -2370,34 +2891,47 @@
 29621	Don't know/ Prefer not to answer
 29622	Liberal Party
 29632	Bloc Qu<e9>b<e9>cois
+29637	ndp
 29675	Conservative Party
 29695	Liberal Party
-29758	Don't know/ Prefer not to answer
+29718	ndp
+29735	Conservative Party
+29749	Conservative Party
+29758	Liberal Party
 29763	Liberal Party
 29771	Liberal Party
 29776	Liberal Party
+29791	Don't know/ Prefer not to answer
+29797	Liberal Party
+29809	Don't know/ Prefer not to answer
 29831	Liberal Party
 29855	Conservative Party
 29859	ndp
 29876	ndp
+29879	ndp
 29888	Liberal Party
+29912	Conservative Party
 29916	Conservative Party
 29920	ndp
-29923	Don't know/ Prefer not to answer
+29923	Green Party
+29926	Conservative Party
 29935	Conservative Party
 29941	Liberal Party
 29974	Conservative Party
 29979	Green Party
-29980	Don't know/ Prefer not to answer
+29980	Bloc Qu<e9>b<e9>cois
 29984	Liberal Party
 29985	Bloc Qu<e9>b<e9>cois
 29993	ndp
+30023	ndp
 30034	Liberal Party
 30041	Don't know/ Prefer not to answer
 30077	Don't know/ Prefer not to answer
 30090	ndp
 30102	Green Party
 30112	Liberal Party
+30114	Conservative Party
+30156	Conservative Party
 30170	Liberal Party
 30183	Liberal Party
 30186	Don't know/ Prefer not to answer
@@ -2409,17 +2943,23 @@
 30228	ndp
 30246	Liberal Party
 30253	Conservative Party
+30256	Don't know/ Prefer not to answer
+30261	Liberal Party
 30266	Liberal Party
 30274	Conservative Party
+30283	Don't know/ Prefer not to answer
 30301	Conservative Party
 30308	Liberal Party
+30313	Liberal Party
 30316	Conservative Party
+30317	Conservative Party
 30323	Conservative Party
-30328	Liberal Party
-30334	Don't know/ Prefer not to answer
+30328	ndp
+30334	Liberal Party
 30378	Conservative Party
 30379	Liberal Party
 30383	Liberal Party
+30385	Don't know/ Prefer not to answer
 30390	Bloc Qu<e9>b<e9>cois
 30392	Liberal Party
 30404	Don't know/ Prefer not to answer
@@ -2427,12 +2967,15 @@
 30432	Liberal Party
 30433	Liberal Party
 30435	Liberal Party
+30444	Conservative Party
 30468	ndp
 30496	Don't know/ Prefer not to answer
 30521	Liberal Party
-30548	Don't know/ Prefer not to answer
+30548	Conservative Party
+30556	People's Party
 30563	ndp
-30566	Liberal Party
+30566	Don't know/ Prefer not to answer
+30606	Liberal Party
 30612	Liberal Party
 30614	Liberal Party
 30617	Liberal Party
@@ -2440,48 +2983,62 @@
 30624	Conservative Party
 30636	Green Party
 30643	Conservative Party
-30670	ndp
+30670	Liberal Party
+30675	Don't know/ Prefer not to answer
 30678	Liberal Party
 30689	Liberal Party
 30694	ndp
 30703	Conservative Party
 30705	ndp
-30719	Don't know/ Prefer not to answer
+30719	Liberal Party
 30726	Bloc Qu<e9>b<e9>cois
 30732	Bloc Qu<e9>b<e9>cois
 30746	Conservative Party
 30753	Conservative Party
+30755	Conservative Party
 30757	Conservative Party
 30765	Liberal Party
 30772	Liberal Party
 30774	People's Party
+30780	Conservative Party
+30781	Liberal Party
+30807	ndp
 30815	Liberal Party
 30820	Conservative Party
 30832	Conservative Party
 30837	ndp
+30849	ndp
 30850	Conservative Party
 30868	Liberal Party
 30871	Don't know/ Prefer not to answer
+30885	Green Party
 30889	Liberal Party
 30890	Conservative Party
 30900	Conservative Party
 30921	Conservative Party
 30990	Don't know/ Prefer not to answer
 31015	Liberal Party
-31022	Conservative Party
+31020	Green Party
+31022	Green Party
+31024	Liberal Party
 31032	Liberal Party
+31052	ndp
+31110	Don't know/ Prefer not to answer
 31111	Liberal Party
 31113	Conservative Party
 31132	Conservative Party
 31143	Green Party
 31146	Bloc Qu<e9>b<e9>cois
 31160	Conservative Party
+31171	Don't know/ Prefer not to answer
 31179	Conservative Party
 31183	Bloc Qu<e9>b<e9>cois
 31184	Liberal Party
+31200	Liberal Party
 31258	Bloc Qu<e9>b<e9>cois
 31280	Liberal Party
 31282	Liberal Party
+31309	People's Party
 31311	Liberal Party
 31343	Conservative Party
 31348	Conservative Party
@@ -2490,17 +3047,20 @@
 31403	Conservative Party
 31411	Liberal Party
 31451	Don't know/ Prefer not to answer
-31455	ndp
+31455	Liberal Party
 31484	Liberal Party
 31485	Liberal Party
 31497	Don't know/ Prefer not to answer
 31500	Liberal Party
+31529	Liberal Party
 31541	Don't know/ Prefer not to answer
 31564	Conservative Party
 31584	Green Party
+31587	Liberal Party
+31590	ndp
 31602	Bloc Qu<e9>b<e9>cois
 31622	Don't know/ Prefer not to answer
-31625	Liberal Party
+31625	Don't know/ Prefer not to answer
 31635	Bloc Qu<e9>b<e9>cois
 31639	Liberal Party
 31641	Conservative Party
@@ -2508,6 +3068,7 @@
 31666	ndp
 31674	ndp
 31692	Liberal Party
+31708	Liberal Party
 31733	Conservative Party
 31735	Liberal Party
 31748	Liberal Party
@@ -2518,8 +3079,9 @@
 31799	Conservative Party
 31858	Conservative Party
 31863	Liberal Party
-31868	Don't know/ Prefer not to answer
+31868	Liberal Party
 31875	Liberal Party
+31882	ndp
 31889	Conservative Party
 31892	Liberal Party
 31898	ndp
@@ -2537,9 +3099,11 @@
 31969	ndp
 31994	Liberal Party
 32021	Conservative Party
+32025	Liberal Party
 32029	Liberal Party
 32036	Liberal Party
 32054	Conservative Party
+32076	ndp
 32086	Conservative Party
 32090	ndp
 32098	Conservative Party
@@ -2547,16 +3111,23 @@
 32101	ndp
 32116	ndp
 32131	Conservative Party
+32137	Don't know/ Prefer not to answer
+32138	Conservative Party
+32142	Don't know/ Prefer not to answer
 32181	Liberal Party
+32184	Conservative Party
+32186	ndp
+32208	Green Party
 32216	Liberal Party
 32221	Conservative Party
 32224	Conservative Party
 32234	Don't know/ Prefer not to answer
-32237	Don't know/ Prefer not to answer
+32237	Liberal Party
 32266	ndp
+32273	Don't know/ Prefer not to answer
 32317	ndp
 32321	Bloc Qu<e9>b<e9>cois
-32331	People's Party
+32331	Conservative Party
 32333	ndp
 32336	ndp
 32348	ndp
@@ -2567,32 +3138,44 @@
 32403	Liberal Party
 32404	Conservative Party
 32417	Liberal Party
+32418	Conservative Party
+32435	Liberal Party
 32479	Green Party
 32488	Conservative Party
+32499	Don't know/ Prefer not to answer
 32514	Don't know/ Prefer not to answer
 32526	Don't know/ Prefer not to answer
 32539	Conservative Party
 32542	Liberal Party
 32552	Liberal Party
 32553	Liberal Party
+32559	Liberal Party
 32566	Green Party
 32570	Liberal Party
+32581	ndp
+32585	Liberal Party
 32587	Conservative Party
 32598	Liberal Party
 32602	Liberal Party
 32612	Liberal Party
 32642	Conservative Party
 32647	ndp
+32681	People's Party
+32684	Liberal Party
 32688	Liberal Party
 32694	Liberal Party
 32700	Conservative Party
 32712	Bloc Qu<e9>b<e9>cois
 32714	Don't know/ Prefer not to answer
 32715	Liberal Party
+32732	ndp
 32742	ndp
+32746	ndp
 32771	Bloc Qu<e9>b<e9>cois
+32782	ndp
+32796	Liberal Party
 32812	Liberal Party
-32828	Liberal Party
+32828	ndp
 32831	Liberal Party
 32832	Don't know/ Prefer not to answer
 32834	Liberal Party
@@ -2604,16 +3187,18 @@
 32881	Conservative Party
 32889	Conservative Party
 32909	Conservative Party
-32911	ndp
+32911	Green Party
+32920	ndp
 32927	Liberal Party
 32935	Conservative Party
 32950	Liberal Party
-32959	Liberal Party
+32959	Bloc Qu<e9>b<e9>cois
 32964	Conservative Party
 32967	Bloc Qu<e9>b<e9>cois
-32971	ndp
+32971	Don't know/ Prefer not to answer
 32974	Liberal Party
 32980	ndp
+32985	ndp
 32986	Liberal Party
 32992	Don't know/ Prefer not to answer
 32994	Liberal Party
@@ -2624,24 +3209,30 @@
 33013	Green Party
 33037	ndp
 33042	Conservative Party
+33056	Don't know/ Prefer not to answer
 33058	ndp
 33062	Liberal Party
 33106	Conservative Party
 33109	Green Party
-33130	Liberal Party
+33130	ndp
 33142	Conservative Party
 33146	Conservative Party
 33169	Bloc Qu<e9>b<e9>cois
 33177	Conservative Party
+33183	Don't know/ Prefer not to answer
 33190	Liberal Party
 33199	Bloc Qu<e9>b<e9>cois
 33223	Liberal Party
+33229	Don't know/ Prefer not to answer
 33237	Liberal Party
 33241	Don't know/ Prefer not to answer
 33244	ndp
 33245	Liberal Party
 33256	Bloc Qu<e9>b<e9>cois
 33263	Liberal Party
+33264	Conservative Party
+33313	ndp
+33314	Don't know/ Prefer not to answer
 33318	ndp
 33330	ndp
 33331	Liberal Party
@@ -2651,16 +3242,22 @@
 33406	Liberal Party
 33412	Liberal Party
 33417	Don't know/ Prefer not to answer
+33443	ndp
 33445	Don't know/ Prefer not to answer
-33495	Don't know/ Prefer not to answer
+33495	Conservative Party
 33505	Green Party
 33509	Conservative Party
+33518	Liberal Party
 33522	Don't know/ Prefer not to answer
 33524	Bloc Qu<e9>b<e9>cois
+33548	ndp
 33560	Green Party
 33564	Liberal Party
 33584	Liberal Party
 33589	ndp
+33591	ndp
+33598	Bloc Qu<e9>b<e9>cois
+33614	Green Party
 33638	Bloc Qu<e9>b<e9>cois
 33658	Conservative Party
 33667	Liberal Party
@@ -2672,8 +3269,9 @@
 33745	Don't know/ Prefer not to answer
 33756	Liberal Party
 33776	Don't know/ Prefer not to answer
+33779	ndp
 33792	ndp
-33795	ndp
+33795	Conservative Party
 33797	Conservative Party
 33813	Conservative Party
 33822	Liberal Party
@@ -2685,8 +3283,11 @@
 33891	Liberal Party
 33913	Conservative Party
 33921	Liberal Party
+33928	ndp
 33934	Liberal Party
-33947	Green Party
+33941	Green Party
+33943	Conservative Party
+33947	Don't know/ Prefer not to answer
 33957	ndp
 33963	Liberal Party
 33999	Liberal Party
@@ -2698,8 +3299,9 @@
 34070	Bloc Qu<e9>b<e9>cois
 34074	ndp
 34081	Liberal Party
+34096	Bloc Qu<e9>b<e9>cois
 34103	Conservative Party
-34113	Don't know/ Prefer not to answer
+34113	Liberal Party
 34126	Conservative Party
 34128	Conservative Party
 34145	Liberal Party
@@ -2712,37 +3314,44 @@
 34195	Bloc Qu<e9>b<e9>cois
 34204	Don't know/ Prefer not to answer
 34205	Conservative Party
+34224	Liberal Party
 34228	Conservative Party
 34233	Conservative Party
 34250	ndp
 34284	Liberal Party
 34298	ndp
 34305	ndp
-34316	Conservative Party
-34331	Don't know/ Prefer not to answer
+34316	Liberal Party
+34331	ndp
 34335	Conservative Party
 34340	ndp
 34342	Conservative Party
 34347	Conservative Party
+34375	People's Party
 34388	Liberal Party
 34398	Liberal Party
 34400	Conservative Party
 34403	Don't know/ Prefer not to answer
 34408	Conservative Party
+34444	Liberal Party
 34472	ndp
+34474	Don't know/ Prefer not to answer
+34475	Liberal Party
 34478	Liberal Party
 34482	Conservative Party
 34520	Conservative Party
 34534	Liberal Party
 34546	Green Party
+34557	ndp
 34616	Green Party
 34625	Conservative Party
-34635	Don't know/ Prefer not to answer
+34635	People's Party
 34638	Conservative Party
 34646	Don't know/ Prefer not to answer
 34651	Conservative Party
 34663	Conservative Party
 34680	Conservative Party
+34695	Green Party
 34697	ndp
 34718	Conservative Party
 34739	Conservative Party
@@ -2750,27 +3359,35 @@
 34758	Bloc Qu<e9>b<e9>cois
 34766	Liberal Party
 34776	Conservative Party
+34785	ndp
+34799	Liberal Party
 34808	ndp
 34811	Conservative Party
 34812	Bloc Qu<e9>b<e9>cois
 34819	Don't know/ Prefer not to answer
 34842	Liberal Party
+34853	Don't know/ Prefer not to answer
 34863	ndp
 34867	Liberal Party
 34882	ndp
+34883	ndp
 34893	Conservative Party
 34949	Liberal Party
 34971	Conservative Party
 34976	Liberal Party
+34988	ndp
 34995	ndp
 35014	Conservative Party
 35019	Don't know/ Prefer not to answer
 35022	Liberal Party
 35028	Don't know/ Prefer not to answer
+35031	Conservative Party
 35035	Liberal Party
 35037	Liberal Party
 35043	Conservative Party
+35065	Don't know/ Prefer not to answer
 35066	Liberal Party
+35083	Green Party
 35090	ndp
 35094	Don't know/ Prefer not to answer
 35126	Don't know/ Prefer not to answer
@@ -2787,42 +3404,57 @@
 35223	Conservative Party
 35231	Conservative Party
 35235	Liberal Party
+35270	Conservative Party
 35272	Liberal Party
+35280	ndp
 35283	Conservative Party
+35294	Don't know/ Prefer not to answer
 35296	Liberal Party
 35318	Conservative Party
 35329	Bloc Qu<e9>b<e9>cois
 35358	Liberal Party
 35362	ndp
 35371	ndp
+35386	ndp
 35404	Conservative Party
 35410	Don't know/ Prefer not to answer
 35416	People's Party
 35419	Conservative Party
+35430	Bloc Qu<e9>b<e9>cois
 35440	ndp
+35467	Liberal Party
 35506	Don't know/ Prefer not to answer
 35518	ndp
-35520	Conservative Party
+35520	Don't know/ Prefer not to answer
 35522	Bloc Qu<e9>b<e9>cois
 35533	Green Party
 35542	Conservative Party
 35548	Conservative Party
+35573	Don't know/ Prefer not to answer
 35585	Don't know/ Prefer not to answer
 35592	Conservative Party
+35603	Don't know/ Prefer not to answer
 35607	Bloc Qu<e9>b<e9>cois
 35616	Liberal Party
+35617	Don't know/ Prefer not to answer
 35618	Conservative Party
 35625	ndp
+35631	Liberal Party
 35643	Conservative Party
 35645	Conservative Party
 35649	Conservative Party
 35650	ndp
 35659	Conservative Party
 35668	Liberal Party
+35689	Conservative Party
+35702	ndp
 35708	Conservative Party
 35715	Bloc Qu<e9>b<e9>cois
+35730	ndp
+35742	Liberal Party
 35743	Don't know/ Prefer not to answer
 35757	Liberal Party
+35766	Liberal Party
 35773	Liberal Party
 35809	ndp
 35811	Liberal Party
@@ -2833,37 +3465,50 @@
 35848	ndp
 35852	Conservative Party
 35858	ndp
-35885	Don't know/ Prefer not to answer
+35872	ndp
+35885	Liberal Party
 35887	Conservative Party
 35890	Liberal Party
 35904	Conservative Party
 35907	Conservative Party
 35924	Liberal Party
+35927	Conservative Party
+35930	Liberal Party
 35933	Conservative Party
 35954	Conservative Party
 35960	Green Party
 35962	Liberal Party
+35986	Conservative Party
+35989	Don't know/ Prefer not to answer
 36002	Liberal Party
 36032	Don't know/ Prefer not to answer
 36034	Don't know/ Prefer not to answer
 36045	Conservative Party
+36058	Conservative Party
 36070	Conservative Party
 36085	Liberal Party
 36087	Liberal Party
+36093	Bloc Qu<e9>b<e9>cois
+36094	Don't know/ Prefer not to answer
 36098	Conservative Party
 36110	Liberal Party
+36113	Liberal Party
 36123	Conservative Party
 36146	Liberal Party
 36157	Liberal Party
 36166	Conservative Party
 36169	ndp
+36173	Conservative Party
 36176	Liberal Party
+36191	Green Party
 36192	ndp
 36203	Liberal Party
 36204	ndp
+36207	Liberal Party
 36222	Don't know/ Prefer not to answer
 36225	Liberal Party
 36233	Bloc Qu<e9>b<e9>cois
+36239	ndp
 36275	Bloc Qu<e9>b<e9>cois
 36277	Conservative Party
 36280	Conservative Party
@@ -2871,8 +3516,10 @@
 36288	Liberal Party
 36296	Liberal Party
 36301	Don't know/ Prefer not to answer
+36305	Conservative Party
 36325	Conservative Party
 36331	Conservative Party
+36335	Liberal Party
 36352	Don't know/ Prefer not to answer
 36377	Don't know/ Prefer not to answer
 36382	Conservative Party
@@ -2881,16 +3528,21 @@
 36408	Conservative Party
 36416	Don't know/ Prefer not to answer
 36434	Liberal Party
+36437	Liberal Party
 36451	ndp
 36472	ndp
 36476	Liberal Party
 36486	ndp
 36501	ndp
+36506	Don't know/ Prefer not to answer
 36507	Liberal Party
+36532	ndp
+36553	ndp
 36569	Conservative Party
 36571	Liberal Party
 36573	ndp
 36582	Conservative Party
+36583	Green Party
 36601	Liberal Party
 36602	Liberal Party
 36606	Conservative Party
@@ -2898,23 +3550,31 @@
 36612	Conservative Party
 36613	Don't know/ Prefer not to answer
 36632	Conservative Party
+36656	Green Party
+36664	Liberal Party
 36665	Don't know/ Prefer not to answer
 36667	Conservative Party
 36680	Green Party
 36704	Liberal Party
+36713	ndp
 36715	Don't know/ Prefer not to answer
-36726	Liberal Party
+36726	Don't know/ Prefer not to answer
 36734	Liberal Party
 36753	Conservative Party
+36766	Don't know/ Prefer not to answer
+36801	Green Party
+36809	ndp
 36823	Conservative Party
-36838	Liberal Party
+36838	Don't know/ Prefer not to answer
+36845	Don't know/ Prefer not to answer
 36856	Liberal Party
 36857	Liberal Party
 36875	Bloc Qu<e9>b<e9>cois
-36880	Don't know/ Prefer not to answer
+36880	Conservative Party
 36909	Liberal Party
 36917	Conservative Party
 36920	Conservative Party
+36946	Conservative Party
 36960	Liberal Party
 36982	Conservative Party
 36983	ndp
@@ -2931,45 +3591,57 @@
 37130	Conservative Party
 37151	Liberal Party
 37157	Conservative Party
+37158	ndp
+37169	Conservative Party
 37172	Bloc Qu<e9>b<e9>cois
 37186	Conservative Party
 37190	Conservative Party
 37196	Liberal Party
 37198	Liberal Party
-37211	Green Party
+37211	Conservative Party
+37212	ndp
 37234	Conservative Party
 37242	Conservative Party
 37247	Bloc Qu<e9>b<e9>cois
 37248	Don't know/ Prefer not to answer
+37253	Liberal Party
 37260	Liberal Party
 37274	Conservative Party
 37279	Don't know/ Prefer not to answer
 37293	Liberal Party
 37307	Liberal Party
+37320	Liberal Party
+37329	Liberal Party
 37340	Liberal Party
 37347	Liberal Party
 37379	Bloc Qu<e9>b<e9>cois
 37382	Conservative Party
 37383	Bloc Qu<e9>b<e9>cois
 37389	Conservative Party
-37429	Conservative Party
+37429	Don't know/ Prefer not to answer
 37431	Liberal Party
 37441	Don't know/ Prefer not to answer
+37447	ndp
 37454	Bloc Qu<e9>b<e9>cois
 37464	Conservative Party
 37465	Bloc Qu<e9>b<e9>cois
+37491	Don't know/ Prefer not to answer
 37497	ndp
 37500	ndp
 37506	Liberal Party
 37512	Conservative Party
 37538	Liberal Party
+37577	ndp
 37591	Conservative Party
 37594	ndp
 37595	Conservative Party
+37603	Don't know/ Prefer not to answer
 37604	Conservative Party
 37606	ndp
 37662	Liberal Party
 37667	Bloc Qu<e9>b<e9>cois
+37674	Don't know/ Prefer not to answer
+37676	Liberal Party
 37679	Conservative Party
 37682	Conservative Party
 37687	Liberal Party
@@ -2979,8 +3651,9 @@
 37712	Conservative Party
 37715	ndp
 37716	Bloc Qu<e9>b<e9>cois
-37773	Liberal Party
+37773	Don't know/ Prefer not to answer
 37786	Liberal Party
+37791	Conservative Party
 37793	Conservative Party
 37797	Liberal Party
 37819	ndp
