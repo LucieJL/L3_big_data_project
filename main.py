@@ -16,7 +16,7 @@ testIndexes = pd.read_csv('exemple.txt', sep='\t', header=None)
 
 ''' Pipeline de prétraitrement '''
 
-# Age : Division des classes d'âges existantes en fonction de leur médiane
+# Age : Division des classes d'âges existantes en fonction de leur médiane (réduit la dimension quand encodé)
 col = "cps19_age"
 choices = [1,2,3,4,5,6]
 conditions = [(df[col]>=18) & (df[col]<29),
@@ -26,6 +26,12 @@ conditions = [(df[col]>=18) & (df[col]<29),
             (df[col]>=55) & (df[col]<66),
             (df[col]>=66)]
 df["classeAge"] = np.select(conditions, choices, default=0)
+
+''' Encoding function (needs a list) '''
+def labelEncoder(list_att):
+    for att in list_att:
+        le.fit(df[att].unique())
+        df[att] = le.transform(df[att])
 
 # Lead : Conversion en bit
 lead_trust_atts = [
