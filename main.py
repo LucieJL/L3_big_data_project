@@ -68,10 +68,16 @@ lead_strong_atts = [
     'cps19_lead_strong_115', 'cps19_lead_strong_116', 'cps19_lead_strong_117',
     'cps19_lead_strong_118', 'cps19_lead_strong_119', 'cps19_lead_strong_120'
 ]
+lead_cares_atts = [
+    'cps19_lead_cares_113', 'cps19_lead_cares_114',
+    'cps19_lead_cares_115', 'cps19_lead_cares_116', 'cps19_lead_cares_117',
+    'cps19_lead_cares_118', 'cps19_lead_cares_119', 'cps19_lead_cares_120'
+]
 # Cast en int
 df[lead_trust_atts] = df[lead_trust_atts].isna().astype(int)
 df[lead_int_atts] = df[lead_int_atts].isna().astype(int)
 df[lead_strong_atts] = df[lead_strong_atts].isna().astype(int)
+df[lead_cares_atts] = df[lead_cares_atts].isna().astype(int)
 
 # Définition des attributs à encoder
 attributes_to_encode = [
@@ -100,14 +106,14 @@ labelEncoder(df, attributes_to_encode)
 
 predictAttributeNaiveBayes(df, [
     'cps19_age', 'cps19_employment', 'cps19_religion', 'cps19_fed_id'
-] + lead_strong_atts + lead_trust_atts + lead_int_atts, 'cps19_prov_id')
+] + lead_strong_atts + lead_trust_atts + lead_int_atts + lead_cares_atts, 'cps19_prov_id')
 
 labelEncoder(df, ['cps19_prov_id'])
 
 
 predictAttributeNaiveBayes(df, [
     'cps19_age', 'cps19_employment', 'cps19_religion', 'cps19_fed_id', 'cps19_prov_id'
-] + lead_strong_atts + lead_trust_atts + lead_int_atts, 'cps19_vote_2015')
+] + lead_strong_atts + lead_trust_atts + lead_int_atts + lead_cares_atts, 'cps19_vote_2015')
 
 labelEncoder(df, ['cps19_vote_2015'])
 
@@ -185,7 +191,7 @@ attributes_not_to_encode = [
     'cps19_age',
     'cps19_pos',
     'label'
-] + lead_strong_atts + lead_int_atts + lead_trust_atts
+] + lead_strong_atts + lead_int_atts + lead_trust_atts + lead_cares_atts
 
 df = df[attributes_to_encode + attributes_not_to_encode]
 
@@ -247,9 +253,9 @@ for train_index, test_index in kf.split(dfTrain):
     index_partition += 1
 
 print('\nCategorialNB')
-printFinalMetrics(nb_accuracies, nb_accuracies)
+printFinalMetrics(nb_accuracies, nb_balanced_accuracies)
 print("\nRandomForestClassifier")
-printFinalMetrics(rf_accuracies, rf_accuracies)
+printFinalMetrics(rf_accuracies, rf_balanced_accuracies)
 
 
 ''' Prédiction du dataset de test '''
