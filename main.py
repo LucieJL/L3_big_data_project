@@ -49,6 +49,36 @@ df['cps19_religion']=df['cps19_religion'].replace({
 
 #Genre + éducation rien à faire (si ce n'est encoder)
 
+#Income : For all ppl without income_cat, we have income_number except 3 -> categorization of the number and median income cat for the 3 of whom we don't know anything (no cat no number)
+
+dfCatNa = df[df['cps19_income_cat'].isna()] # Divide df in two parts : ppl with income cat and ppl without
+dfCatNoNa = df[~df['cps19_income_cat'].isna()]
+
+dfCatNaNumNa = dfCatNa[dfCatNa['cps19_income_number'].isna()] #Don't have either cat nor number
+dfCatNaNumNoNa = dfCatNa[~dfCatNa['cps19_income_number'].isna()]
+
+dfCatNaNumNa['cps19_income_cat'] = "$30,001 to $60,000" # Replace by median income cat for these 3 
+
+colInc = 'cps19_income_number'
+choicesInc = ['No income', '$1 to $30,000', '$30,001 to $60,000', '$60,001 to $90,000', '$90,001 to $110,000', 
+          '$110,001 to $150,000', '$150,001 to $200,000', 'More than $200,000']
+conditionsInc = [(dfCatNaNumNoNa[colInc]==0), # No income
+             (dfCatNaNumNoNa[colInc]>0) & (dfCatNaNumNoNa[colInc]<=30000),
+             (dfCatNaNumNoNa[colInc]>30000) & (dfCatNaNumNoNa[colInc]<=60000),
+             (dfCatNaNumNoNa[colInc]>60000) & (dfCatNaNumNoNa[colInc]<=90000),
+             (dfCatNaNumNoNa[colInc]>90000) & (dfCatNaNumNoNa[colInc]<=110000),
+             (dfCatNaNumNoNa[colInc]>110000) & (dfCatNaNumNoNa[colInc]<=150000),
+             (dfCatNaNumNoNa[colInc]>150000) & (dfCatNaNumNoNa[colInc]<=200000),
+             (dfCatNaNumNoNa[colInc]>200000)]
+
+dfCatNaNumNoNa['cps19_income_cat'] = np.select(conditionsInc, choicesInc, default=0)
+
+concat = [dfCatNaNumNa, dfCatNaNumNoNa]
+dfCat = pd.concat(concat)
+
+concat2 = [dfCat, dfCatNoNa]
+df = pd.concat(concat2)
+
 # Ajout du numéro de ligne de départ dans un attribut
 df['row_num'] = df.index
 
